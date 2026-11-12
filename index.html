@@ -1,594 +1,134 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111d32"><title>MY LIFE QUEST 9.6</title><style>
-:root{font-family:system-ui,-apple-system,sans-serif;background:#101827;color:#eff5ff}*{box-sizing:border-box}body{margin:0}main{max-width:680px;margin:auto;padding:20px 15px 65px}h1{font-size:26px;margin:5px 0}.sub{color:#b2c3d8;font-size:13px;line-height:1.6}.card{background:#1b2b42;border:1px solid #34465e;border-radius:17px;padding:17px;margin:13px 0}h2{font-size:17px;margin:0 0 14px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.level{font-size:30px;font-weight:800}.bar{background:#394b60;border-radius:20px;height:11px;overflow:hidden;margin:12px 0}.fill{background:#64dcb3;height:100%;width:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.skill{padding:12px;background:#263a55;border-radius:12px}.skill strong{display:block;font-size:21px;margin:6px 0}.muted{color:#afc1d7;font-size:12px}button,input,select{font:inherit}button{background:#67ddb7;color:#12283a;border:0;border-radius:10px;padding:11px 12px;font-weight:700;cursor:pointer}button.secondary{background:#344c68;color:#edf5ff}button.danger{background:#5d3c4a;color:#ffe1e8}button:disabled{opacity:.5}input,select{width:100%;min-width:0;border:1px solid #54677f;background:#101e32;color:#fff;border-radius:10px;padding:11px}label{font-size:13px;color:#d1deef;display:block;margin-bottom:5px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wide{grid-column:1/-1}.task{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #354b62;padding:12px 0}.task span{display:block}.task small{display:block;color:#afc1d7;margin-top:4px}.notice{display:none;padding:11px;background:#285343;border-radius:10px;margin-top:10px}.log{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-top:1px solid #34475f;font-size:13px}.log button{font-size:12px;padding:7px}.buttons{display:flex;gap:8px;flex-wrap:wrap}.hint{font-size:12px;color:#afc1d7;line-height:1.7}footer{font-size:12px;color:#afc1d7;line-height:1.8}#timer{font-size:27px;font-variant-numeric:tabular-nums;font-weight:800}#tasks .task:first-child{border:0} .tree{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.node{background:#263a55;border:1px solid #455b75;border-radius:12px;padding:12px}.node.locked{opacity:.52}.node.unlocked{border-color:#67ddb7}.node b{display:block;margin-bottom:5px}.node small{color:#b8cce2;line-height:1.5}.pill{display:inline-block;border-radius:20px;background:#34516b;padding:5px 9px;font-size:12px;margin:3px}.pill.got{background:#24634f;color:#c5ffeb}.section-note{font-size:12px;color:#b7c9df;line-height:1.6}  .hero{background:linear-gradient(135deg,#253d65,#422c67 65%,#224d55);border:2px solid #e6b96c;box-shadow:0 8px 30px #0006}.pixel{font-size:64px;text-align:center;filter:drop-shadow(0 7px 0 #13263b)}.gold{color:#ffdf86}.questlabel{display:inline-block;background:#6a4b29;color:#ffe2a1;border-radius:8px;padding:5px 10px;font-size:12px}.bonus{background:#182c45;border:1px solid #425c7b;border-radius:12px;padding:12px;margin:10px 0}.bonus label{display:flex;gap:9px;align-items:center;margin:9px 0}.bonus input{width:auto;accent-color:#eac075}.story{width:100%;min-height:65px;border-radius:10px;background:#102038;border:1px solid #526982;color:white;padding:10px;font:inherit}  .world{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.area{border:1px solid #52668a;border-radius:13px;padding:13px;background:linear-gradient(145deg,#243a56,#17283e)}.area.lock{opacity:.5;filter:grayscale(.6)}.area b{display:block;margin-bottom:7px}.area small{color:#bfd0e5}.battle{background:linear-gradient(160deg,#402a54,#242e52);border:1px solid #9a79bb;border-radius:15px;padding:15px}.enemy{font-size:54px;text-align:center}.hp{height:13px;background:#342d46;border-radius:20px;overflow:hidden;margin:9px 0}.hp>div{height:100%;background:#ff768b;transition:width .2s}.loot{border:1px solid #ad864d;background:#3d332e;border-radius:12px;padding:13px}.equip{display:grid;grid-template-columns:1fr 1fr;gap:9px}.item{background:#263a55;padding:12px;border-radius:12px;border:1px solid #536784}.item.on{border-color:#e9c277;background:#3b3c4b}.item button{margin-top:8px;font-size:12px;padding:7px}.small{font-size:12px;color:#c0cfe0} .jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.job{background:linear-gradient(155deg,#30466b,#1b2944);border:1px solid #52678d;border-radius:14px;padding:12px}.job.active{border:2px solid #f3c46d;background:linear-gradient(145deg,#554567,#263e59)}.job .em{font-size:31px}.job b{display:block;margin:6px 0}.job button{margin-top:9px;width:100%;font-size:12px}.job .bar{height:6px;margin:8px 0}.job small{color:#c0d1e8}.jobdesc{color:#c0d1e8;font-size:11px;line-height:1.5;min-height:34px}.jobtag{font-size:11px;color:#ffdb9a}.filterrow{display:flex;gap:7px;overflow-x:auto;padding:4px 0 10px}.filterrow button{white-space:nowrap;font-size:12px;padding:8px 11px}.filterrow button.chosen{background:#f3c46d;color:#17223c}.careerhero{text-align:center;padding:12px;background:linear-gradient(130deg,#4b335e,#24465c);border-radius:14px;border:1px solid #b39362}.careerhero .em{font-size:53px}.careerhero b{display:block;font-size:21px;color:#ffe1a0}.careerhero small{color:#c7d8e8}.mission{border-top:1px solid #3b5271;padding:10px 0}.mission:first-child{border:0}.mission b{display:block}.mission small{color:#bdcde2}.mini{font-size:11px;color:#c2d3e8} 
-/* Ver.7: classic 2D RPG UI */
-:root{font-family:system-ui,'Noto Sans JP',sans-serif;background:#101322;color:#f8f0d9}body{background:radial-gradient(circle at 50% 0,#24315b,#101322 65%)}main{padding:12px 12px 100px;max-width:680px}h1{font-family:Georgia,serif;letter-spacing:2px;color:#ffe3a0;text-shadow:2px 3px #080c19;font-size:23px}.card{background:#171e37;border:3px solid #8d7c5b;border-radius:5px;box-shadow:inset 0 0 0 2px #384463,4px 5px 0 #080b17;padding:13px;margin:13px 0}.card h2{color:#ffe2a0;border-bottom:1px solid #746344;padding-bottom:9px}.hero{background:linear-gradient(180deg,#32446a 0%,#243b52 50%,#17223e 50%);border-color:#e6bd72}.pixel{filter:none}.bar,.hp{border-radius:2px;border:1px solid #a38b55;background:#10182c}.fill{background:linear-gradient(90deg,#54ae75,#b7e779)}button{border-radius:4px;background:#f3d487;color:#20243b;border:2px solid #fff1c2;box-shadow:2px 3px 0 #080b17;min-height:40px}button.secondary{background:#303b61;color:#f7f1dd;border-color:#7d87a3}input,select,.story{border-radius:3px;background:#0c1530;border:2px solid #627298}.task{background:#222b46;border:1px solid #566080;margin:6px 0;padding:11px 8px;border-radius:3px}.task button{flex-shrink:0}.job,.skill,.node,.area,.item{border-radius:3px}.questlabel{border-radius:3px}.nav-rpg{position:sticky;top:0;z-index:10;background:#12172c;border:2px solid #bc965b;padding:7px;display:flex;gap:6px;overflow-x:auto;box-shadow:0 3px 10px #000a;margin:8px 0}.nav-rpg a{flex-shrink:0;color:#ffe7a6;background:#283251;border:1px solid #8c7b62;padding:9px;text-decoration:none;font-size:12px}.rpg-avatar-wrap{display:flex;align-items:center;gap:12px;margin-top:8px}.rpg-avatar{width:116px;height:142px;flex-shrink:0;background:linear-gradient(#5c8caa 0 55%,#5a7855 55% 78%,#344a45 78%);border:3px double #edc67b;display:grid;place-items:center;image-rendering:pixelated}.rpg-avatar svg{width:100px;height:128px;image-rendering:pixelated;filter:drop-shadow(4px 5px 0 #162334)}.rpg-identity{min-width:0;flex:1}.rpg-identity .level{font-size:27px;color:#ffe3a1}.rpg-identity .jobline{font-size:13px;line-height:1.6;color:#c8e8ff}.rpg-identity .titleline{font-size:13px;color:#f4d7a0}.rpg-identity .equipmentline{font-size:12px;color:#d6d2bd;margin-top:9px}.rpg-header{font-size:12px;color:#ffe7a6;letter-spacing:2px}.card.quick{border-color:#d5b66d;background:#202943}.quick .task{background:#283452}.quick .task span{font-weight:700}.rpg-bottom{position:fixed;bottom:0;left:0;right:0;z-index:30;display:flex;justify-content:center;gap:2px;background:#12172a;border-top:3px solid #c7a469;padding:6px 4px max(7px,env(safe-area-inset-bottom))}.rpg-bottom a{flex:1;max-width:110px;text-align:center;color:#ffe5a2;text-decoration:none;font-size:11px;background:#283454;border:1px solid #776749;padding:7px 2px}.rpg-bottom a span{display:block;font-size:20px}.rpg-details>summary{cursor:pointer;color:#ffe3a1;font-weight:700;padding:7px}.rpg-details>summary::marker{color:#e7bc72}.rpg-details .card{margin-top:10px}@media(max-width:390px){.rpg-avatar{width:100px}.rpg-avatar svg{width:85px}.rpg-identity .level{font-size:23px}.task{gap:6px}.task button{padding:8px}}
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101b2d"><link rel="manifest" href="manifest.webmanifest"><title>FOCUS EARTH</title><style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#f4f6ff;background:#0c1423}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#253958,#0c1423 65%);min-height:100vh}.app{max-width:660px;margin:auto;padding:20px 16px 40px}header{display:flex;justify-content:space-between;align-items:center}h1{font-size:23px;letter-spacing:2px;margin:6px 0}small,.muted{color:#aebbd0}.chip{background:#263750;padding:9px 12px;border-radius:22px;font-size:13px}.world{position:relative;overflow:hidden;border:1px solid #42546c;border-radius:25px;background:linear-gradient(#7896b4 0%,#a6c4cb 45%,#78a99a 46%,#476f66);margin-top:20px;box-shadow:0 18px 35px #0005}.sky{z-index:2;position:absolute;top:16px;left:20px;color:#183b4e;font-size:14px;font-weight:700}.scene{display:block;width:100%;height:auto;aspect-ratio:4/3;image-rendering:pixelated;background:#89b5c7}#city .building{transition:opacity .5s,transform .5s;transform-box:fill-box;transform-origin:center bottom}.scene text{font-family:system-ui}.overlay{position:absolute;bottom:12px;left:12px;right:12px;background:#14253dcc;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;font-size:13px}.panel{background:#1b2a40;border:1px solid #33445b;border-radius:22px;padding:20px;margin-top:16px}.time{font-size:clamp(58px,15vw,88px);font-weight:800;text-align:center;letter-spacing:1px;font-variant-numeric:tabular-nums;margin:12px 0}.label{display:block;font-size:13px;color:#aebbd0;margin-bottom:9px}.presets{display:flex;gap:8px;flex-wrap:wrap}.presets button{flex:1;min-width:55px}.controls{display:flex;gap:10px;margin-top:18px}button{border:0;border-radius:14px;padding:13px 14px;background:#354863;color:white;font-size:15px;font-weight:700;cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#ffd26d;color:#16233a;flex:2}.secondary{flex:1}input[type=number]{width:90px;padding:12px;border-radius:12px;border:1px solid #566983;background:#101d31;color:white;font-size:18px}input[type=checkbox]{accent-color:#ffd26d;width:18px;height:18px}.settings{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.switch{display:flex;align-items:center;gap:7px;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{text-align:center;background:#23364e;border-radius:15px;padding:13px 5px}.stat strong{display:block;font-size:22px}.stat span{font-size:11px;color:#b8c7d9}.foot{font-size:12px;color:#aebbd0;line-height:1.7}.progress{height:8px;background:#34455c;border-radius:8px;overflow:hidden;margin-top:13px}.bar{height:100%;width:0;background:#ffd26d;transition:width .3s}#toast{min-height:20px;color:#ffd26d;font-size:13px;margin-top:8px}#install{display:none;margin-top:12px;width:100%}@media(prefers-reduced-motion:reduce){*{transition:none!important}}.maptools{z-index:2;position:absolute;top:42px;right:10px;display:flex;gap:5px;align-items:center;background:#14253dc9;border-radius:9px;padding:4px;font-size:11px}.maptools button{padding:5px 9px;border-radius:7px;background:#314a60;font-size:12px}.maptools span{min-width:65px;text-align:center}.scene{touch-action:pan-y}
+/* v12: UI overlays do not collide; scene stays clear */
+.sky{top:15px;left:18px;right:12px;z-index:4;font-size:15px}
+.landmark-status{position:absolute;top:48px;left:12px;z-index:4;background:#19364bdc;color:#fff0bf;padding:6px 10px;border-radius:9px;font-size:11px;font-weight:700;max-width:calc(100% - 24px);line-height:1.35}
+.maptools{top:auto!important;bottom:76px!important;right:12px!important;z-index:4!important;max-width:calc(100% - 24px)}
+.overlay{z-index:4;bottom:10px;left:10px;right:10px;gap:8px;flex-wrap:wrap}
+.overlay span{white-space:nowrap}
+@media(max-width:380px){.maptools button{padding:5px 6px!important}.maptools span{min-width:48px!important}.overlay{font-size:11px}}
 
-/* Version 8: classic 8-bit console fantasy RPG theme */
-:root{font-family:ui-monospace, 'Noto Sans JP',system-ui,sans-serif;background:#080d1d;color:#fff9ec}
-body{background:#090e20;color:#fff9ec}main{max-width:640px;padding:10px 10px 108px}
-h1{font-family:ui-monospace,serif;font-size:22px;color:#fff;letter-spacing:1px;text-shadow:2px 2px #050814}
-.card{background:#071d78;border:3px solid #f8f8ff;outline:2px solid #101b43;box-shadow:inset 0 0 0 2px #728bde,4px 5px 0 #030611;border-radius:8px;padding:14px}
-.card h2{color:#fff;border-color:#9eaff5;font-size:16px}.hero{background:linear-gradient(180deg,#092b9c,#09195d);border-color:#fff}
-.nav-rpg{background:#071754;border:2px solid white;border-radius:5px}.nav-rpg a,.rpg-bottom a{background:#0b257f;color:#fff;border:2px solid #b8c9ff;border-radius:4px}
-.rpg-bottom{background:#030c33;border-top:3px solid #fff}.rpg-bottom a{font-size:10px}.rpg-bottom a span{font-size:19px}
-button{background:#fff4c1;color:#151b3a;border:2px solid #fff;border-radius:3px;box-shadow:2px 2px 0 #03081b}button.secondary{background:#1b378a;color:white;border:2px solid #b9c9ff}
-.task{background:#0c287d;border:1px solid #8baff8;border-radius:3px}.task:has(button){min-height:65px}.task button{min-width:75px}
-.rpg-avatar{background:linear-gradient(#4e8fc7 0 54%,#4f8a50 54% 80%,#375f32 80%);border:3px solid #fff;border-radius:3px}.rpg-identity .level{color:#fff7a8}
-.job,.skill,.node,.area,.item{background:#10286c;border:1px solid #7c9be8}.job.active{background:#24398a;border:2px solid #fff4b1}
-.bar{border:1px solid white;background:#030d35}.fill{background:#f3df79}.questlabel{background:#fff2ba;color:#121e55}
-#quests{border-color:#ffe58a}#quests h2{color:#fff3a9}.rpg-header{color:#f7e49a}
-#quests .task:has(small){align-items:center}.notice{background:#185b4a;border:2px solid #aaf1c8}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
-@media(max-width:390px){.card{padding:10px}.rpg-avatar{width:98px;height:130px}.rpg-avatar svg{width:82px}.rpg-identity .level{font-size:23px}}
-</style><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png" type="image/png"><meta name="theme-color" content="#142c9a"><meta name="apple-mobile-web-app-capable" content="yes"><style>
-/* MY LIFE QUEST v9 — Habitica-inspired daily dashboard */
-:root{--habit-bg:#201b30;--habit-card:#302c40;--habit-accent:#9360ff}body{background:#201b30!important;color:#f5f1fa}main{padding-bottom:105px}.card{background:#302c40;border:1px solid #484155;border-radius:16px;box-shadow:none}.card h2{color:#f8f2ff}.hero{border:1px solid #62547d;background:#302c40}.nav-rpg{background:#282238;border:0;border-radius:12px;box-shadow:none}.nav-rpg a{border:1px solid #554b6a;border-radius:8px;background:#39314d;color:#f5eaff}.rpg-bottom{background:#231d33;border-top:1px solid #504464}.rpg-bottom a{border:0;border-radius:8px;background:transparent;color:#ddd2f5}.bar{background:#403a50;border:0;border-radius:5px}.fill{background:#f1c950}.task{background:#383246;border:1px solid #50485e;border-radius:12px}button{background:#9764f8;border-color:#aa82fa;color:#fff;border-radius:8px}button.secondary{background:#443a58;border-color:#645477}.habit-panel{margin:12px 0 18px}.habit-status{display:flex;justify-content:space-around;align-items:center;gap:10px;background:#2d273d;border-bottom:1px solid #4b425c;padding:14px 10px;border-radius:14px}.habit-status strong{font-size:17px;color:#f7eaff}.habit-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;margin:15px 0}.habit-day{min-width:0;background:transparent;color:#b9aecb;border:0;box-shadow:none;padding:7px 1px;font-size:12px}.habit-day b{display:block;font-size:17px;margin-top:5px}.habit-day.active{background:#9561f7;color:white}.habit-day:disabled{opacity:.45}.habit-summary{background:#302c40;border:1px solid #50465f;border-radius:14px;padding:14px;display:flex;align-items:center;gap:14px}.habit-sprite{font-size:46px}.habit-summary .bar{margin:6px 0}.habit-list{display:grid;gap:10px;margin-top:12px}.habit-item{display:flex;align-items:center;gap:11px;background:#302c40;border:1px solid #484155;border-radius:13px;padding:14px 12px;min-height:75px}.habit-item.done{opacity:.7}.habit-emoji{font-size:29px;min-width:35px}.habit-content{flex:1;min-width:0}.habit-content b{display:block;font-size:16px}.habit-content small{display:block;color:#bdb4cb;font-size:12px;margin-top:4px}.habit-check{width:31px;height:31px;min-width:31px;background:transparent;border:2px solid #726785;border-radius:6px;box-shadow:none;padding:0;color:#fff}.habit-check.checked{background:#9867f8;border-color:#b18aff}.habit-note{font-size:12px;color:#c7bcd7;line-height:1.7;margin-top:10px}.habit-head{font-size:18px;color:#f3e8ff;margin:15px 0 6px}
-
-/* 9.1: a single tab is visible at a time, without removing legacy game logic */
-main>.card[data-quest-tab],main>.rpg-details[data-quest-tab],main>.habit-panel[data-quest-tab]{display:none!important}
-main>.card[data-quest-tab].tab-visible,main>.rpg-details[data-quest-tab].tab-visible,main>.habit-panel[data-quest-tab].tab-visible{display:block!important}
-main>.nav-rpg{display:none!important}
-main>.tab-intro{font-size:13px;color:#c8bde1;margin:12px 0 8px}
-.rpg-bottom a{font-size:11px!important;padding:8px 2px!important;min-width:0!important}
-.rpg-bottom a.active{background:#59418a!important;color:#fff!important}
-body{overflow-x:hidden}
-.habit-sprite{width:62px;flex-shrink:0}.habit-sprite svg{width:58px;height:74px;image-rendering:pixelated}.quest-delete{font-size:11px;padding:7px 8px;min-height:34px}.task>div:first-child{flex:1;min-width:0}.habit-status{justify-content:flex-start;padding-left:18px}
-</style><style>
-/* v9.5 Adventure dashboard */
-.quest-stats{background:#302c40;border:1px solid #50465f;border-radius:16px;padding:15px;margin:14px 0;color:#f6f0ff}
-.quest-stats h2{margin:0 0 12px;color:#f6f0ff}.stat-switch,.stat-period,.stat-move{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
-.quest-stats button{padding:8px 11px;font-size:12px;background:#443a58;color:#f2eaff}.quest-stats button.selected{background:#9764f8;color:white}
-.stat-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.stat-card{background:#3b344c;border-radius:11px;padding:12px}.stat-card small{display:block;color:#c9bfdb}.stat-card strong{display:block;font-size:22px;margin-top:5px;overflow-wrap:anywhere}
-.stat-chart{display:flex;align-items:end;gap:4px;min-height:148px;padding:10px 2px 4px;border-bottom:1px solid #675a7c;overflow-x:auto}.stat-bar{flex:1;min-width:12px;max-width:55px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:128px;gap:5px}.stat-bar .fillbar{width:72%;max-width:31px;background:#9c76ee;border-radius:4px 4px 0 0;min-height:2px}.stat-bar small{font-size:9px;color:#cbbce1;white-space:nowrap}.stat-bar .val{font-size:10px;color:#e5d6ff}
-.stat-cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}.stat-cal-head button{min-width:36px}.stat-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:10px 0}.stat-calendar .weekday{text-align:center;font-size:11px;color:#bfb1d3;padding:5px 0}.stat-day{min-height:40px!important;padding:5px 1px!important;border-radius:6px!important;background:#3b344c!important;color:#eae0fa!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border:1px solid transparent!important}.stat-day[data-n="1"]{background:#4b396b!important}.stat-day[data-n="2"]{background:#654a9d!important}.stat-day[data-n="3"]{background:#8c65ce!important}.stat-day[data-n="4"]{background:#ae8bea!important}.stat-day.today{border-color:#f4cf70!important}.stat-day.chosen{outline:2px solid #fff;outline-offset:-3px}.stat-day em{font-size:9px;font-style:normal;color:#f8edff}.stat-day.empty{visibility:hidden}.stat-details{background:#3b344c;border-radius:11px;padding:12px;margin-top:10px}.stat-details ul{padding-left:20px;margin:8px 0}.stat-details li{margin:5px 0;font-size:12px;line-height:1.5}.stat-muted{font-size:12px;color:#cbbddd;line-height:1.6}
-</style><style>
-/* v9.6 goals, task editor and finance */
-.q96{background:#302c40;border:1px solid #514567;border-radius:16px;padding:14px;margin:14px 0;color:#f5efff}
-.q96 h2{margin:0 0 8px;font-size:17px}.q96 h3{font-size:14px;margin:15px 0 7px}.q96 p,.q96 small{color:#d2c5e5}
-.q96 input,.q96 select,.q96 textarea{width:100%;min-width:0;background:#211c31;color:#fff;border:1px solid #75678b;border-radius:8px;padding:10px;font-size:14px}
-.q96 label{display:block;font-size:12px;color:#d6c9ea;margin:9px 0 4px}
-.q96 .q96-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.q96 button{background:#7251aa;color:white;border:1px solid #ad8cf0;border-radius:8px;padding:9px;font-size:12px;box-shadow:none}
-.q96 button.alt{background:#453b57}.q96 button.warn{background:#684052}
-.q96 .q96-actions{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}
-.q96 .q96-card{background:#3b344d;padding:12px;border-radius:10px;margin:8px 0}
-.q96 .q96-row{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.q96 .q96-meter{height:12px;border-radius:9px;background:#211c31;overflow:hidden;margin:9px 0}.q96 .q96-meter span{height:100%;display:block;background:#b18bff}
-.q96 .q96-nums{font-variant-numeric:tabular-nums}.q96 .q96-note{font-size:11px;line-height:1.6}
-.task{flex-wrap:wrap}.task .secondary{font-size:11px;padding:7px}.habit-item{flex-wrap:wrap}
-</style></head><body><main>
-<p class="sub">MY LIFE QUEST · 9.6</p><h1>⚔ MY LIFE QUEST</h1><p class="sub">家族との時間を大切に。仕事も学びも、すべてが冒険になる。</p>
-<section class="card"><div class="top"><div><div class="muted">現在の称号</div><b id="title">人生の探究者</b></div><div class="level" id="level">Lv.1</div></div><div class="bar"><div class="fill" id="progress"></div></div><div class="sub" id="xp"></div><div class="notice" id="notice" role="status"></div></section>
-<section class="card"><h2>🧙 転職ギルド · 13の職業</h2><p class="hint">現実の活動で職業経験値を獲得。職業はいつでも変更でき、経験値はすべて保持されます。複数の職業を同時に育てられます。</p><div class="careerhero" id="activeCareer"></div><div class="jobs" id="jobs"></div></section><section class="card"><h2>📜 職業ごとの称号</h2><p class="hint">Lv.2・5・10・20で職業の称号が進化します。</p><div id="careerTitles" class="tree"></div></section><section class="card hero"><div class="questlabel">⚔️ ADVENTURER STATUS</div><div class="pixel">🧙‍♂️</div><p style="text-align:center;color:#ffdf86;font-weight:800">今日も自分の物語を進めよう</p><p style="text-align:center;font-size:12px">クエストを進めて、新しいエリアを解放しよう</p></section><section class="card"><h2>🗺️ 冒険マップ</h2><p class="hint">人生全体のレベルが上がると新しいエリアが開きます。すべての活動が冒険の一歩です。</p><div class="world" id="world"></div></section><section class="card"><h2>🐉 ボスバトル</h2><p class="hint">クエストを達成するとボスにダメージ！ ボスを倒すと宝箱を獲得。負けや期限はありません。</p><div class="battle"><div class="top"><b id="bossName">霧の番人</b><span id="bossStage" class="small"></span></div><div class="enemy" id="bossEmoji">👾</div><div class="hp"><div id="bossHP" style="width:100%"></div></div><p class="small" id="bossText"></p><div class="buttons"><button id="claimBoss" type="button" style="display:none">🏆 討伐報酬を受け取る</button></div></div></section><section class="card"><h2>🎁 宝箱と装備</h2><div class="loot"><div class="top"><div><b>🧰 宝箱 <span id="chests">0</span> 個</b><div class="small">ボス討伐で獲得。中身はランダムな装備です。</div></div><button id="openChest" type="button">宝箱を開ける</button></div><p class="small" id="lootMessage" role="status"></p></div><h3 style="font-size:15px">🎒 所持装備</h3><p class="hint">装備は見た目と称号を楽しむためのもの。経験値倍率は変わりません。</p><div id="equipment" class="equip"></div></section><section class="card"><h2>✨ 成長する11の能力</h2><div class="grid" id="skills"></div></section>
-<section class="card"><h2>🌳 スキルツリー</h2><p class="section-note">各能力のレベルに応じて称号が解放されます。未解放の目標も表示します。</p><div class="tree" id="tree"></div></section>
-<section class="card"><h2>🏅 獲得した実績</h2><div id="badges"></div></section>
-<section class="card"><h2>⏱️ 集中時間を経験値に</h2><p class="hint">勉強・読書・資料作成など、集中した時間を記録。10分につき10 XP（端数は切り捨て）。特別ボーナスも適用できます。タイマーは画面を開いている間だけ動きます。</p><div class="fields"><div class="wide"><label for="timedTask">何に集中する？</label><select id="timedTask"></select></div><div><label for="minutes">記録する時間（分）</label><input id="minutes" type="number" min="1" max="600" value="30"></div><div><label>ストップウォッチ</label><div id="timer">00:00</div></div><div class="wide buttons"><button id="startTimer" type="button">▶ 開始</button><button class="secondary" id="stopTimer" type="button">⏸ 停止</button><button class="secondary" id="useTimer" type="button">計測時間を入力</button><button id="recordTime" type="button">時間を記録してXP獲得</button></div></div></section>
-<section class="card"><h2>🎁 特別な経験ボーナス</h2><p class="hint">次に記録するクエストに加算されます。複数選択可・ボーナス合計は最大100 XP。挑戦しただけでも獲得できます。</p><div class="bonus"><label><input type="checkbox" class="bonuscheck" value="50" data-name="初挑戦">🌟 初めての挑戦 +50</label><label><input type="checkbox" class="bonuscheck" value="30" data-name="苦手への挑戦">🛡️ 苦手への挑戦 +30</label><label><input type="checkbox" class="bonuscheck" value="80" data-name="苦手の克服">🏆 苦手の克服 +80</label><label><input type="checkbox" class="bonuscheck" value="20" data-name="新しい気づき">💡 新しい気づき +20</label></div><label for="reflection">冒険メモ（任意）</label><textarea id="reflection" class="story" placeholder="今日の発見、気持ち、次に試したいこと…"></textarea></section><section class="card"><h2>⚔️ 行動クエスト</h2><div class="filterrow" id="questFilters"></div><p class="hint">行動を達成したら押してください。繰り返し記録できます。</p><div id="tasks"></div></section>
-<section class="card"><h2>➕ オリジナルクエストを作る</h2><form id="form" class="fields"><div class="wide"><label for="name">クエスト名</label><input id="name" required maxlength="70" placeholder="例：新しい研修資料を完成させる"></div><div><label for="category">成長する能力</label><select id="category"></select></div><div class="wide"><label for="jobCategory">成長する職業</label><select id="jobCategory"></select></div><div><label for="points">獲得経験値</label><select id="points"><option value="10">10 XP 小さな一歩</option><option value="20" selected>20 XP 通常</option><option value="40">40 XP 大きな挑戦</option><option value="60">60 XP 大きな成果</option></select></div><button class="wide">クエストを追加</button></form></section>
-<section class="card"><div class="top"><h2>📜 冒険の記録 ― 人生のセーブデータ</h2><button class="secondary" id="export" type="button">バックアップ保存</button></div><div id="history"></div><div class="buttons" style="margin-top:12px"><label for="import" class="sub">バックアップを復元（JSON）</label><input id="import" type="file" accept="application/json,.json"></div></section>
-<footer>経験値は成長を楽しむための目安です。休息や家族との時間も大切な成長として扱います。記録はこのブラウザのローカル保存領域に保存されます。端末変更・閲覧データ削除・ファイルの開き方によって失われる場合があるため、定期的にバックアップしてください。人生研究所や他アプリへの自動連携はまだありません。職業はゲーム内の称号であり資格や技能の認定ではありません。称号・実績は記録から自動計算されます。ボスの進行・宝箱・装備は別途保存され、記録を取り消しても討伐済みのボスは戻りません。</footer>
-</main><script>
-'use strict';
-const cats=[['learn','📖','読書・学習'],['focus','🎯','集中・習慣'],['it','💻','IT・自動化'],['practice','📋','実務・資料'],['rehab','🧑‍⚕️','リハビリ・研修'],['create','✍️','人生研究・表現'],['family','🏡','家族・体験'],['health','🌿','健康・休息'],['community','🤝','地域・社会貢献'],['coffee','☕','コーヒー・事業'],['outdoor','🏔️','自然・写真']];
-const base=[
-['本を読む','learn',20,'time'],['資格・専門分野を勉強する','learn',20,'time'],['集中作業に取り組む','focus',20,'time'],['ITやAIを学ぶ','it',20,'time'],['ITの仕組みを改善する','it',40,'action'],['仕事の資料を作成する','practice',40,'action'],['実務の仕事を1つ完了する','practice',20,'action'],['リハビリの支援・指導を行う','rehab',30,'action'],['研修会に参加する','rehab',40,'action'],['人生研究所に記録する','create',30,'action'],['文章・エッセイを書く','create',20,'time'],['家族と旅行・お出かけする','family',60,'action'],['子どもとゲームを楽しむ','family',20,'action'],['家族とゆっくり過ごす','family',20,'action'],['運動する','health',20,'time'],['意識して休息をとる','health',20,'action']
-];
-const careers=[
-['regional','🛡️','地域守護騎士','地域事業・介護予防・地域会議','community','まちの案内人','地域の支援者','地域の守護者','まちの伝説'],
-['rehab','⚕️','リハビリ賢者','デイサービス・運動指導・リハビリ','rehab','見習い療法士','癒やし手','癒やしの賢者','生命の守護者'],
-['it','🧙','IT魔導師','IT・AI・クエスタップ関連業務','it','コードの弟子','仕組みの職人','IT魔導師','自動化の大賢者'],
-['business','⚔️','事業開拓者','自費事業・企画・顧客対応','practice','商いの旅人','事業の開拓者','独立の開拓者','未来の創業王'],
-['coffee','☕','コーヒー錬金術師','焙煎・抽出・販売・コーヒー研究','coffee','豆の見習い','焙煎職人','焙煎の錬金術師','珈琲の大賢者'],
-['writer','✒️','文章の吟遊詩人','note・ブログ・エッセイ・人生研究所','create','言葉の旅人','記録の書き手','物語の紡ぎ手','人生の語り部'],
-['scholar','📚','読書賢者','読書・勉強・研修参加','learn','本の探検家','学びの研究者','知識の賢者','万象の博識者'],
-['focus','⏳','集中騎士','集中作業・習慣づくり','focus','集中の見習い','時間の使い手','集中の騎士','時の達人'],
-['family','🏡','家族の勇者','子どもとの遊び・家族旅行・団らん','family','絆の旅人','家族の冒険者','絆の勇者','思い出の守護神'],
-['mountain','🥾','山岳探検家','登山・ハイキング・自然体験','outdoor','森の散歩人','山道の冒険者','山岳の探検家','峰々の覇者'],
-['photo','📷','写真魔術師','カメラ・撮影・写真整理','outdoor','光の見習い','風景の観察者','光の記録者','一瞬の芸術家'],
-['manager','💼','経営者','経営の学習・事業運営・意思決定','practice','経営の見習い','事業を育てる人','経営戦略家','未来の経営者'],
-['wellness','🌿','健康の守護者','運動・睡眠・休息・心身の回復','health','休息の旅人','健康の支援者','調和の守り手','生命の調律師']
-];
-const extraQuests=[
-['地域の介護予防教室を担当','community',40,'action','regional'],['地域会議・地域包括との打ち合わせ','community',35,'action','regional'],['地域事業の報告書を作成','practice',35,'action','regional'],
-['デイサービスで運動・リハビリ支援','rehab',40,'action','rehab'],['利用者の個別リハビリを担当','rehab',40,'action','rehab'],['運動教室・集団体操を担当','rehab',35,'action','rehab'],['利用者向け自主トレ資料を作成','rehab',40,'action','rehab'],['リハビリ専門書を読む','learn',20,'time','rehab'],
-['クエスタップ関連のIT業務を進める','it',40,'action','it'],['AI・LINE・Canvaの仕組みを作る','it',45,'action','it'],['ITツールを学ぶ','it',20,'time','it'],
-['自費サービスの企画を進める','practice',40,'action','business'],['自費サービスを提供する','practice',40,'action','business'],['事業の収支や仕組みを改善','practice',35,'action','business'],
-['コーヒー豆を焙煎する','coffee',30,'action','coffee'],['コーヒーを抽出・レシピ検証','coffee',25,'action','coffee'],['コーヒーの販売・イベント出店','coffee',50,'action','coffee'],
-['note・ブログの記事を書く','create',20,'time','writer'],['人生研究所に気づきを記録','create',30,'action','writer'],['エッセイを仕上げる','create',45,'action','writer'],
-['子どもと登山・ハイキング','outdoor',60,'action','mountain'],['自然の中を歩く','outdoor',20,'time','mountain'],['カメラで撮影する','outdoor',20,'time','photo'],['写真を選び編集する','outdoor',30,'action','photo'],
-['子どもとゲームを楽しむ','family',35,'action','family'],['子どもと一緒に遊ぶ','family',35,'action','family'],['家族とゆっくり過ごす','family',35,'action','family'],['家族と食事を楽しむ','family',30,'action','family'],['子どもの話をじっくり聞く','family',35,'action','family'],['家族旅行・お出かけ','family',80,'action','family'],['読書する','learn',20,'time','scholar'],['研修会に参加する','learn',40,'action','scholar'],['集中して勉強する','focus',20,'time','focus'],['しっかり休む','health',20,'action','wellness']
-];
-const key='lifequest-v2';let state;try{state=JSON.parse(localStorage.getItem(key))}catch(e){}
-if(!state||!Array.isArray(state.tasks)||!Array.isArray(state.log)){
-let old;try{old=JSON.parse(localStorage.getItem('lifequest-v1'))}catch(e){}
-state={tasks:base.map((a,i)=>({id:i+1,name:a[0],cat:a[1],xp:a[2],mode:a[3]})),log:[]};
-if(old&&Array.isArray(old.log)){const remap={work:'practice',rest:'health',create:'create',learn:'learn',family:'family',health:'health'};state.log=old.log.map(x=>({...x,cat:remap[x.cat]||'practice'}));if(Array.isArray(old.tasks))old.tasks.filter(x=>!['本を15分読む','今日の大切な仕事を1つ進める','自分の考えを5分書く','体を10分動かす','家族との時間を楽しむ','意識して休む'].includes(x.name)).forEach((x,i)=>state.tasks.push({...x,id:1000+i,cat:remap[x.cat]||'practice',mode:'action'}));}
+/* v12.2: Keep controls and labels out of the rendered world. */
+.world{display:flex;flex-direction:column;overflow:hidden;padding:14px 12px 12px;gap:8px}
+.world .sky{position:static!important;top:auto!important;left:auto!important;padding:0 4px;font-size:15px;line-height:1.4;z-index:auto!important}
+.world .landmark-status{position:static!important;top:auto!important;left:auto!important;max-width:100%!important;align-self:flex-start;font-size:11px;line-height:1.4;z-index:auto!important}
+.world .scene{display:block;width:100%;height:auto;aspect-ratio:4/3;flex:none;border-radius:12px}
+.world .maptools{position:static!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;max-width:100%!important;align-self:center;justify-content:center;display:flex;gap:8px;z-index:auto!important;padding:5px 7px}
+.world .maptools button{min-height:38px;padding:8px 13px;font-size:13px;white-space:nowrap}
+.world .maptools span{min-width:72px;white-space:nowrap}
+.world .overlay{position:static!important;bottom:auto!important;left:auto!important;right:auto!important;z-index:auto!important;display:flex;justify-content:space-between;gap:8px;margin-top:0;padding:11px 12px}
+.world .overlay span{white-space:normal;font-size:clamp(11px,2.8vw,13px)}
+@media(max-width:370px){.world .maptools button{padding:7px 9px}.world .maptools span{min-width:60px}.world{padding:12px 9px}}
+</style></head><body><main class="app"><header><div><small>集中が、世界を育てる。</small><h1>FOCUS EARTH <small style="font-size:11px;letter-spacing:0;color:#f3d38b">5500 HOUR WORLD · LANDMARK EDITION · v12.2</small></h1></div><div class="chip" id="rank">小さな集落</div></header><section class="world"><div class="sky" id="stage">WORLD 01 · はじまりの土地</div><div class="landmark-status" id="landmarkStatus">次の名所を準備中</div><canvas class="scene" id="city" width="480" height="360" role="img" aria-label="ブロックで作られた立体的な街が集中時間とともに成長します"></canvas><div class="maptools"><button id="zoomout" type="button">− 縮小</button><span id="viewname">街を建築中</span><button id="zoomin" type="button">＋ 拡大</button></div><div class="overlay"><span id="growth">地球完成 0%</span><span id="count">建築 0分</span></div></section><section class="panel"><label class="label" for="minutes">集中時間（1〜180分）</label><div class="settings"><input id="minutes" type="number" min="1" max="180" value="180" inputmode="numeric"><div class="presets"><button data-min="15">15分</button><button data-min="25">25分</button><button data-min="50">50分</button><button data-min="60">60分</button><button data-min="180">180分</button></div></div><div class="time" id="clock">180:00</div><div class="progress"><div class="bar" id="progress"></div></div><div class="controls"><button class="primary" id="start">集中スタート</button><button class="secondary" id="pause" disabled>一時停止</button><button class="secondary" id="reset">終了</button></div><p id="toast" role="status" aria-live="polite"></p><label class="switch"><input type="checkbox" id="sound" checked>終了時にアラームを鳴らす</label><button id="install">ホーム画面に追加</button></section><section class="panel"><h3 style="margin-top:0">5,500時間の地球建築計画</h3><p class="foot">1日3時間が目標 · 約1,834日（約5年）で地球完成</p><div class="label">目標：5,500時間（330,000分）</div><div class="progress"><div class="bar" id="earthbar"></div></div><p class="foot" id="earthdetail">地球完成までの道のり</p><h3>世界のランドマーク</h3><p class="foot">東京タワー（0〜10時間）→エッフェル塔（10〜50時間）→万里の長城（50〜150時間）→ピラミッド（150〜300時間）→オペラハウス（300〜600時間）。建築中の名所は街の中で少しずつ完成します。</p><h3>あなたの集中記録</h3><div class="stats"><div class="stat"><strong id="today">0</strong><span>今日（分）／180分目標</span></div><div class="stat"><strong id="total">0</strong><span>累計（分）</span></div><div class="stat"><strong id="builds">0</strong><span>建築した分数</span></div></div><p class="foot">1日3時間を目安に、累計5,500時間の集中で地球完成を目指す長期設計です。カレンダーの経過ではなく、実際の累計集中時間で成長します。住宅街→高層ビル→複数都市→国→地球へ発展します。東京タワー、エッフェル塔、万里の長城などのランドマークが集中時間に応じて成長し、木や車も街に登場します。終了や一時停止後も、獲得した成長は保存されます。アプリを閉じている間は建築が進みません。終了音はアプリを開いている状態での利用をおすすめします。</p></section><section class="panel"><h3 style="margin-top:0">記録のバックアップ</h3><p class="foot">5,500時間の旅を守るため、定期的に記録を保存してください。機種変更時にも復元できます。復元すると現在の記録は上書きされます。</p><div class="controls"><button type="button" id="export" class="primary">記録を書き出す</button><button type="button" id="import" class="secondary">記録を復元</button></div><input type="file" id="backupFile" accept="application/json,.json" style="display:none"><p class="foot" id="backupStatus" role="status"></p></section></main><script>
+(()=>{'use strict';const $=id=>document.getElementById(id),KEY='focus-earth-v1',DAY=()=>new Date().toLocaleDateString('sv-SE');let state={seconds:0,today:0,day:DAY(),sound:true};try{const v=JSON.parse(localStorage.getItem(KEY));if(v&&typeof v==='object')state={...state,...v}}catch{}if(state.day!==DAY()){state.today=0;state.day=DAY()}let remaining=10800,session=10800,active=false,paused=false,deadline=0,interval=null,lastSave=Date.now(),deferred=null,audio=null;const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}};function ensureAudio(){try{audio??=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume()}catch{}}function beep(){if(!state.sound)return;ensureAudio();if(!audio)return;for(let i=0;i<3;i++){let o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.35;o.frequency.value=740;o.type='sine';g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.15,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.25);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+.27)}}function format(s){s=Math.max(0,Math.ceil(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}function credit(sec){if(sec<=0)return;state.seconds+=sec;if(state.day!==DAY()){state.day=DAY();state.today=0}state.today+=sec;save()}function current(){return active?Math.max(0,(deadline-Date.now())/1000):remaining}function update(){const r=current();$('clock').textContent=format(r);$('progress').style.width=((session-r)/session*100).toFixed(2)+'%';$('earthbar').style.width=Math.min(100,state.seconds/(GOAL_MINUTES*60)*100)+'%';$('earthdetail').textContent='完成率 '+Math.min(100,state.seconds/(GOAL_MINUTES*60)*100).toFixed(3)+'% · 残り '+Math.ceil(Math.max(0,GOAL_MINUTES-state.seconds/60)/60).toLocaleString()+'時間';$('today').textContent=Math.floor(state.today/60)+' / 180';$('total').textContent=Math.floor(state.seconds/60);const n=Math.floor(state.seconds/60);$('builds').textContent=n;$('count').textContent='累計 '+(n/60).toFixed(1)+' / '+Math.round(GOAL_MINUTES/60).toLocaleString()+'時間';$('growth').textContent='地球完成 '+Math.min(100,state.seconds/(GOAL_MINUTES*60)*100).toFixed(3)+'%';let rank=phases[level(n)].name;$('rank').textContent=rank;$('stage').textContent='WORLD '+String(level(n)+1).padStart(2,'0')+' · '+rank;$('start').textContent=active?'集中中…':paused?'再開':'集中スタート';$('start').disabled=active;$('pause').disabled=!active;$('minutes').disabled=active||paused;document.querySelectorAll('[data-min]').forEach(x=>x.disabled=active||paused);draw(n)}let drawn=-1,drawFraction=-1,viewOffset=0;
+const canvas=$('city'),ctx=canvas.getContext('2d'),W=480,H=360;
+ctx.imageSmoothingEnabled=false;
+const GOAL_MINUTES=5500*60;const phases=[{name:'住宅街',min:0},{name:'高層ビル群',min:GOAL_MINUTES*.2},{name:'複数の都市',min:GOAL_MINUTES*.4},{name:'国の発展',min:GOAL_MINUTES*.65},{name:'地球全体',min:GOAL_MINUTES*.85}];
+function level(n){let v=0;for(let i=0;i<phases.length;i++)if(n>=phases[i].min)v=i;return v}
+function hash(a,b,c=0){let x=Math.sin(a*127.1+b*311.7+c*74.7)*43758.5453;return x-Math.floor(x)}
+function poly(pts,color){ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fill()}
+function iso(cx,cy,u,x,y,z=0){return [cx+(x-y)*u,cy+(x+y)*u*.5-z*u]}
+function cube(cx,cy,u,x,y,z,top,left,right){const [sx,sy]=iso(cx,cy,u,x,y,z),v=u*.5;poly([[sx,sy],[sx+u,sy+v],[sx,sy+2*v],[sx-u,sy+v]],top);poly([[sx-u,sy+v],[sx,sy+2*v],[sx,sy+3*v],[sx-u,sy+2*v]],left);poly([[sx+u,sy+v],[sx,sy+2*v],[sx,sy+3*v],[sx+u,sy+2*v]],right)}
+const grass=['#86bf83','#538b63','#3f7354'],road=['#9ba6aa','#677780','#52646b'],roof=['#b8c9d0','#8295a0','#637987'];
+function detailRect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)))}
+function house(cx,cy,u,x,y,h,p,seed){
+ const base=['#e7d5b6','#b58e72','#926e5c'];
+ for(let z=0;z<h;z++)cube(cx,cy,u,x,y,z,...(h>2?p:base));
+ const [sx,sy]=iso(cx,cy,u,x,y,h);
+ // 段状の瓦屋根と棟。住宅の外観を立体的にする。
+ cube(cx,cy,u,x,y,h,'#b96d54','#894c43','#70433d');
+ detailRect(sx-u*.5,sy+u*.62,u*.25,u*.18,'#f6d28d');
+ for(let z=0;z<h;z++){
+  const [wx,wy]=iso(cx,cy,u,x,y,z);
+  detailRect(wx-u*.58,wy+u*.92,u*.22,u*.24,'#4b5360');
+  detailRect(wx-u*.55,wy+u*.94,u*.15,u*.16,'#ffe4a2');
+  detailRect(wx+u*.30,wy+u*.75,u*.24,u*.25,'#f6e0a7');
+  detailRect(wx+u*.28,wy+u*.73,u*.28,u*.04,'#48596a');
+ }
+ if(h<=2){const [dx,dy]=iso(cx,cy,u,x,y,0);detailRect(dx-u*.42,dy+u*1.18,u*.25,u*.45,'#684b3d');detailRect(dx-u*.23,dy+u*1.35,2,2,'#eac26e')}
 }
-if(!state.career)state.career='regional';
-if(!state.tasks.some(t=>t.job&&careers.some(c=>c[0]===t.job))){const existing=new Set(state.tasks.map(t=>t.name));extraQuests.forEach((a,i)=>{if(!existing.has(a[0]))state.tasks.push({id:20000+i,name:a[0],cat:a[1],xp:a[2],mode:a[3],job:a[4]})})}
-const inferredJob={learn:'scholar',focus:'focus',it:'it',practice:'business',rehab:'rehab',create:'writer',family:'family',health:'wellness',community:'regional',coffee:'coffee',outdoor:'mountain'};
-state.tasks.forEach(t=>{if(!t.job)t.job=inferredJob[t.cat]||'business'});
-state.log.forEach(l=>{if(!l.job)l.job=inferredJob[l.cat]||'business'});
-const habitsListNames=['ジャーナリング','コーヒー事業をすすめる','読書','ブログ記載（もやもやを吐き出す）','筋トレ・散歩','作業療法士勉強','家族との時間を楽しむ','自分のために休む'];
-let questFilter='all';
-function careerXP(id){return state.log.reduce((n,l)=>n+(l.job===id?(Number(l.xp)||0):0),0)}
-function careerTitle(c){let n=lv(careerXP(c[0]));return n>=20?c[9]:n>=10?c[8]:n>=5?c[7]:n>=2?c[6]:c[5]}
-function renderCareers(){el('jobs').replaceChildren();const current=careers.find(c=>c[0]===state.career)||careers[0];el('activeCareer').replaceChildren();let em=document.createElement('div');em.className='em';em.textContent=current[1];let title=document.createElement('b');title.textContent=careerTitle(current);let subtitle=document.createElement('small');subtitle.textContent='選択中：'+current[2]+' · Lv.'+lv(careerXP(current[0]));el('activeCareer').append(em,title,subtitle);
-careers.forEach(c=>{let xp=careerXP(c[0]),div=document.createElement('div');div.className='job'+(state.career===c[0]?' active':'');let emoji=document.createElement('div');emoji.className='em';emoji.textContent=c[1];let name=document.createElement('b');name.textContent=c[2];let desc=document.createElement('div');desc.className='jobdesc';desc.textContent=c[3];let level=document.createElement('div');level.className='jobtag';level.textContent='Lv.'+lv(xp)+' · '+careerTitle(c);let bar=document.createElement('div');bar.className='bar';let fill=document.createElement('div');fill.className='fill';fill.style.width=(xp%100)+'%';bar.append(fill);let small=document.createElement('small');small.textContent=xp+' XP';let btn=document.createElement('button');btn.className=state.career===c[0]?'secondary':'';btn.textContent=state.career===c[0]?'選択中 ✓':'この職業に転職';btn.disabled=state.career===c[0];btn.onclick=()=>{state.career=c[0];questFilter=c[0];save();render()};div.append(emoji,name,desc,level,bar,small,btn);el('jobs').append(div)});
-el('careerTitles').replaceChildren();careers.forEach(c=>{let div=document.createElement('div');div.className='node '+(careerXP(c[0])>=100?'unlocked':'locked');let b=document.createElement('b');b.textContent=c[1]+' '+careerTitle(c);let small=document.createElement('small');let xp=careerXP(c[0]);let next=[2,5,10,20].find(n=>lv(xp)<n);small.textContent=next?'次の称号 Lv.'+next+'まで '+Math.max(0,(next-1)*100-xp)+' XP':'最高称号を獲得！';div.append(b,small);el('careerTitles').append(div)})}
-if(!state.rpg||typeof state.rpg!=='object')state.rpg={stage:1,damage:0,chests:0,inventory:[],equipped:null};
-const gear=[['🪵','旅人の杖'],['🧥','冒険者のマント'],['🗡️','挑戦の剣'],['📚','知恵の書'],['🛡️','勇気の盾'],['👑','探究者の冠'],['💎','成長の宝珠'],['🧭','人生の羅針盤']];
-const areas=[['🌾','はじまりの草原',1],['📚','学びの森',3],['💻','創造の塔',6],['🏔️','挑戦の山',10],['🏡','絆の港',15],['🌌','人生研究の星空',20],['🏰','冒険者の城',30],['🌲','深緑の大森林',50],['🗻','雲上の峰',75],['🧪','錬金術の研究所',100],['🌊','星降る海',150],['🧙','魔法都市',200],['🐉','竜の谷',300],['🌋','炎の大陸',500],['🌙','月影の王国',750],['☀️','太陽の神殿',1000],['🪐','星間の回廊',1500],['🏯','天空の帝国',2000],['🌌','銀河の果て',3000],['👑','伝説の聖域',4000],['✨','人生の大宇宙',5000]];
-const el=id=>document.getElementById(id),catName=id=>cats.find(c=>c[0]===id)?.[2]||'その他';
-function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch(e){alert('保存できませんでした。バックアップを取ってください。')}}
-function total(cat){return state.log.reduce((s,l)=>s+(!cat||l.cat===cat?Number(l.xp)||0:0),0)}
-function lv(x){return Math.min(99999,Math.floor(x/100)+1)}
-function addLog(name,cat,xp,mins,job){job=job||inferredJob[cat]||state.career;let checks=[...document.querySelectorAll('.bonuscheck:checked')];let bonus=Math.min(100,checks.reduce((a,b)=>a+Number(b.value),0));let tags=checks.map(x=>x.dataset.name);let memo=el('reflection').value.trim().slice(0,1000);xp+=bonus;state.rpg.damage+=Math.max(1,Math.ceil(xp/10));checks.forEach(x=>x.checked=false);el('reflection').value='';let before=lv(total()),oldSkill=lv(total(cat));state.log.unshift({id:Date.now()+Math.random(),name,cat,job,xp,bonus,tags,memo,habit:state.tasks.some(t=>t.name===name&&t.kind==='habit'),time:new Date().toISOString(),...(mins?{minutes:mins}:{})});save();render();el('notice').style.display='block';el('notice').textContent=lv(total())>before?'🎉 人生レベルアップ！ Lv.'+lv(total())+' に到達！':lv(total(cat))>oldSkill?'🌟 '+catName(cat)+' が Lv.'+lv(total(cat))+' にアップ！':'✨ '+name+'：+'+xp+' XP 獲得！'}
-const milestones=[{level:2,label:'見習い'},{level:5,label:'実践者'},{level:10,label:'専門家'},{level:20,label:'達人'}];
-const achievements=[{label:'はじめの一歩',ok:()=>state.log.length>=1,desc:'最初の行動を記録'},{label:'読書家',ok:()=>total('learn')>=300,desc:'学習300 XP'},{label:'集中の達人',ok:()=>total('focus')>=500,desc:'集中500 XP'},{label:'改善の職人',ok:()=>total('it')>=500,desc:'IT500 XP'},{label:'人生の記録者',ok:()=>state.log.filter(x=>x.cat==='create').length>=10,desc:'人生研究・表現10回'},{label:'家族との冒険者',ok:()=>state.log.filter(x=>x.cat==='family').length>=10,desc:'家族との体験10回'},{label:'バランスの探究者',ok:()=>cats.every(c=>total(c[0])>0),desc:'すべての能力を記録'}];
-function renderRPG(){const r=state.rpg,cap=12+r.stage*8,remaining=Math.max(0,cap-r.damage);el('world').replaceChildren();areas.forEach(a=>{let div=document.createElement('div');div.className='area'+(lv(total())<a[2]?' lock':'');let name=document.createElement('b');name.textContent=a[0]+' '+a[1];let info=document.createElement('small');info.textContent=lv(total())>=a[2]?'🔓 探索可能':'🔒 人生 Lv.'+a[2]+' で解放';div.append(name,info);el('world').append(div)});el('bossName').textContent=['霧の番人','迷いのゴーレム','先延ばしドラゴン','不安の騎士'][((r.stage-1)%4)];el('bossEmoji').textContent=['👾','🗿','🐲','🦇'][((r.stage-1)%4)];el('bossStage').textContent='第'+r.stage+'章';el('bossHP').style.width=(remaining/cap*100)+'%';el('bossText').textContent=remaining?'残りHP '+remaining+' / '+cap+'（獲得XP 10につき約1ダメージ）':'討伐成功！ 報酬を受け取ろう';el('claimBoss').style.display=remaining?'none':'inline-block';el('chests').textContent=r.chests;el('openChest').disabled=r.chests<1;el('equipment').replaceChildren();if(!r.inventory.length){el('equipment').textContent='まだ装備がありません。最初のボスを倒して宝箱を開けよう。'}r.inventory.forEach((idx,i)=>{if(!gear[idx])return;let div=document.createElement('div');div.className='item'+(r.equipped===i?' on':'');let name=document.createElement('div');name.textContent=gear[idx][0]+' '+gear[idx][1];let btn=document.createElement('button');btn.className='secondary';btn.textContent=r.equipped===i?'装備中 ✓':'装備する';btn.disabled=r.equipped===i;btn.onclick=()=>{r.equipped=i;save();renderRPG();updateHero()};div.append(name,btn);el('equipment').append(div)});}
-function render(){let x=total();renderRPG();renderCareers();el('level').textContent='Lv.'+lv(x);el('xp').textContent=(x%100)+' / 100 XP · 累計 '+x+' XP';el('progress').style.width=(x%100)+'%';el('title').textContent=lv(x)>=30?'人生の達人':lv(x)>=15?'人生の研究者':lv(x)>=7?'成長の冒険者':'人生の探究者';el('skills').replaceChildren();cats.forEach(c=>{let box=document.createElement('div');box.className='skill';let a=document.createElement('span');a.className='muted';a.textContent=c[1]+' '+c[2];let b=document.createElement('strong');b.textContent='Lv.'+lv(total(c[0]));let d=document.createElement('span');d.className='muted';d.textContent=total(c[0])+' XP';box.append(a,b,d);el('skills').append(box)});
-el('tree').replaceChildren();cats.forEach(c=>{let xp=total(c[0]),level=lv(xp);milestones.forEach(m=>{let node=document.createElement('div');node.className='node '+(level>=m.level?'unlocked':'locked');let name=document.createElement('b');name.textContent=(level>=m.level?'🔓 ':'🔒 ')+c[1]+' '+m.label;let note=document.createElement('small');note.textContent=c[2]+' · 必要 Lv.'+m.level+(level>=m.level?' · 解放済み':' · あと '+Math.max(0,(m.level-1)*100-xp)+' XP');node.append(name,note);el('tree').append(node)})});el('badges').replaceChildren();achievements.forEach(a=>{let b=document.createElement('span');b.className='pill '+(a.ok()?'got':'');b.textContent=(a.ok()?'🏅 ':'🔒 ')+a.label;b.title=a.desc;el('badges').append(b)});
-let selected=el('timedTask').value;el('timedTask').replaceChildren();state.tasks.filter(t=>t.mode==='time').forEach(t=>{let o=new Option(t.name+' · '+(careers.find(c=>c[0]===t.job)?.[2]||catName(t.cat)),String(t.id));el('timedTask').add(o)});if([...el('timedTask').options].some(o=>o.value===selected))el('timedTask').value=selected;
-el('questFilters').replaceChildren();[['all','すべて'],...careers.map(c=>[c[0],c[1]+' '+c[2]])].forEach(f=>{let b=document.createElement('button');b.className=questFilter===f[0]?'chosen':'secondary';b.textContent=f[1];b.onclick=()=>{questFilter=f[0];render()};el('questFilters').append(b)});
-el('tasks').replaceChildren();state.tasks.filter(t=>(questFilter==='all'||t.job===questFilter)).sort((a,b)=>Number(b.job==='family')-Number(a.job==='family')).forEach(t=>{let row=document.createElement('div');row.className='task';let desc=document.createElement('div');let name=document.createElement('span');name.textContent=t.name;let meta=document.createElement('small');meta.textContent=(careers.find(c=>c[0]===t.job)?.[2]||catName(t.cat))+' · +'+t.xp+' XP';desc.append(name,meta);let btn=document.createElement('button');btn.textContent=t.mode==='time'?'⏱ 集中へ':'達成！';btn.onclick=()=>{if(t.mode==='time'){const sel=el('timedTask');sel.value=String(t.id);document.querySelector('.rpg-bottom a[data-tab="focus"]')?.click()}else addLog(t.name,t.cat,t.xp,undefined,t.job)};const del=document.createElement('button');del.className='danger quest-delete';del.textContent='削除';del.setAttribute('aria-label',t.name+'を削除');del.onclick=()=>{if(!confirm('「'+t.name+'」をクエスト一覧から削除しますか？\n過去の経験値・記録は残ります。'))return;state.tasks=state.tasks.filter(x=>x.id!==t.id);if(habitsListNames.includes(t.name)){state.deletedHabits=state.deletedHabits||[];if(!state.deletedHabits.includes(t.name))state.deletedHabits.push(t.name)}save();render()};const edit=document.createElement('button');edit.type='button';edit.textContent='編集';edit.className='secondary';edit.onclick=()=>window.questEditTask?.(t.id);row.append(desc,btn,edit,del);el('tasks').append(row)});
-el('history').replaceChildren();if(!state.log.length)el('history').textContent='まだ記録がありません。';state.log.slice(0,30).forEach(l=>{let row=document.createElement('div');row.className='log';let span=document.createElement('span');span.textContent=new Date(l.time).toLocaleString('ja-JP')+' · '+l.name+(l.minutes?' ('+l.minutes+'分)':'')+' · '+(careers.find(c=>c[0]===l.job)?.[2]||catName(l.cat))+' · +'+l.xp+' XP'+(l.tags?.length?' ['+l.tags.join('・')+']':'')+(l.memo?' ／ '+l.memo:'');let undo=document.createElement('button');undo.className='danger';undo.textContent='取消';undo.onclick=()=>{if(confirm('この記録を取り消しますか？')){state.log=state.log.filter(x=>x.id!==l.id);state.rpg.damage=Math.max(0,state.rpg.damage-Math.max(1,Math.ceil(Number(l.xp)/10)));save();render()}};row.append(span,undo);el('history').append(row)})}
-cats.forEach(c=>el('category').add(new Option(c[1]+' '+c[2],c[0])));careers.forEach(c=>el('jobCategory').add(new Option(c[1]+' '+c[2],c[0])));
-el('form').onsubmit=e=>{e.preventDefault();let name=el('name').value.trim();if(!name)return;state.tasks.push({id:Date.now()+Math.random(),name,cat:el('category').value,xp:Number(el('points').value),mode:'action',job:el('jobCategory').value});save();render();e.target.reset()};
-el('recordTime').onclick=()=>{let t=state.tasks.find(x=>String(x.id)===el('timedTask').value),mins=Number(el('minutes').value);if(!t||!Number.isInteger(mins)||mins<1||mins>600){alert('1〜600分の整数で入力してください');return}let xp=Math.floor(mins/10)*10;if(xp===0){alert('10分以上で経験値を獲得できます');return}addLog(t.name,t.cat,xp,mins,t.job)};
-let start=null,elapsed=0,interval=null;function drawTimer(){let ms=elapsed+(start?Date.now()-start:0),s=Math.floor(ms/1000);el('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
-el('startTimer').onclick=()=>{if(!start){start=Date.now();interval=setInterval(drawTimer,500)}};el('stopTimer').onclick=()=>{if(start){elapsed+=Date.now()-start;start=null;clearInterval(interval);drawTimer()}};el('useTimer').onclick=()=>{if(start)el('stopTimer').click();el('minutes').value=Math.max(1,Math.floor(elapsed/60000));elapsed=0;drawTimer()};
-el('claimBoss').onclick=()=>{let r=state.rpg,cap=12+r.stage*8;if(r.damage<cap)return;r.damage-=cap;r.stage++;r.chests++;el('lootMessage').textContent='🏆 ボス討伐！ 宝箱を1個獲得しました。';save();render()};
-el('openChest').onclick=()=>{let r=state.rpg;if(r.chests<1)return;r.chests--;let idx=Math.floor(Math.random()*gear.length);r.inventory.push(idx);el('lootMessage').textContent='✨ '+gear[idx][0]+' '+gear[idx][1]+' を手に入れた！';save();render()};
-el('export').onclick=()=>{let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='人生レベルアップ-バックアップ.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
-el('import').onchange=async e=>{let file=e.target.files[0];if(!file)return;try{let next=JSON.parse(await file.text());if(!Array.isArray(next.tasks)||!Array.isArray(next.log))throw Error('形式が違います');if(confirm('現在の記録をバックアップの内容で置き換えますか？')){state=next;if(!state.career)state.career='regional';
-if(!state.tasks.some(t=>t.job&&careers.some(c=>c[0]===t.job))){const existing=new Set(state.tasks.map(t=>t.name));extraQuests.forEach((a,i)=>{if(!existing.has(a[0]))state.tasks.push({id:20000+i,name:a[0],cat:a[1],xp:a[2],mode:a[3],job:a[4]})})}
-const inferredJob={learn:'scholar',focus:'focus',it:'it',practice:'business',rehab:'rehab',create:'writer',family:'family',health:'wellness',community:'regional',coffee:'coffee',outdoor:'mountain'};
-state.tasks.forEach(t=>{if(!t.job)t.job=inferredJob[t.cat]||'business'});
-state.log.forEach(l=>{if(!l.job)l.job=inferredJob[l.cat]||'business'});
-const habitsListNames=['ジャーナリング','コーヒー事業をすすめる','読書','ブログ記載（もやもやを吐き出す）','筋トレ・散歩','作業療法士勉強','家族との時間を楽しむ','自分のために休む'];
-let questFilter='all';
-function careerXP(id){return state.log.reduce((n,l)=>n+(l.job===id?(Number(l.xp)||0):0),0)}
-function careerTitle(c){let n=lv(careerXP(c[0]));return n>=20?c[9]:n>=10?c[8]:n>=5?c[7]:n>=2?c[6]:c[5]}
-function renderCareers(){el('jobs').replaceChildren();const current=careers.find(c=>c[0]===state.career)||careers[0];el('activeCareer').replaceChildren();let em=document.createElement('div');em.className='em';em.textContent=current[1];let title=document.createElement('b');title.textContent=careerTitle(current);let subtitle=document.createElement('small');subtitle.textContent='選択中：'+current[2]+' · Lv.'+lv(careerXP(current[0]));el('activeCareer').append(em,title,subtitle);
-careers.forEach(c=>{let xp=careerXP(c[0]),div=document.createElement('div');div.className='job'+(state.career===c[0]?' active':'');let emoji=document.createElement('div');emoji.className='em';emoji.textContent=c[1];let name=document.createElement('b');name.textContent=c[2];let desc=document.createElement('div');desc.className='jobdesc';desc.textContent=c[3];let level=document.createElement('div');level.className='jobtag';level.textContent='Lv.'+lv(xp)+' · '+careerTitle(c);let bar=document.createElement('div');bar.className='bar';let fill=document.createElement('div');fill.className='fill';fill.style.width=(xp%100)+'%';bar.append(fill);let small=document.createElement('small');small.textContent=xp+' XP';let btn=document.createElement('button');btn.className=state.career===c[0]?'secondary':'';btn.textContent=state.career===c[0]?'選択中 ✓':'この職業に転職';btn.disabled=state.career===c[0];btn.onclick=()=>{state.career=c[0];questFilter=c[0];save();render()};div.append(emoji,name,desc,level,bar,small,btn);el('jobs').append(div)});
-el('careerTitles').replaceChildren();careers.forEach(c=>{let div=document.createElement('div');div.className='node '+(careerXP(c[0])>=100?'unlocked':'locked');let b=document.createElement('b');b.textContent=c[1]+' '+careerTitle(c);let small=document.createElement('small');let xp=careerXP(c[0]);let next=[2,5,10,20].find(n=>lv(xp)<n);small.textContent=next?'次の称号 Lv.'+next+'まで '+Math.max(0,(next-1)*100-xp)+' XP':'最高称号を獲得！';div.append(b,small);el('careerTitles').append(div)})}
-if(!state.rpg||typeof state.rpg!=='object')state.rpg={stage:1,damage:0,chests:0,inventory:[],equipped:null};save();render()}}catch(err){alert('復元できません：JSON形式を確認してください')}e.target.value=''};
-// 2D hero built from original pixel blocks; equipment visibly changes appearance.
-function pixelHero(){
- const r=state.rpg||{},item=gear[r.inventory?.[r.equipped]]||null;
- const kind=item?item[1]:'';
- const cape=kind.includes('マント'),sword=kind.includes('剣'),crown=kind.includes('冠'),shield=kind.includes('盾'),staff=kind.includes('杖'),book=kind.includes('書');
- const job=state.career;const robe=['it','writer','scholar','coffee'].includes(job);const business=job==='manager'||(state.costume==='suit');const heroTier=lv(total())>=5000?5:lv(total())>=1000?4:lv(total())>=500?3:lv(total())>=100?2:lv(total())>=50?1:0;
- const blocks=[];function rect(x,y,w,h,c){blocks.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`)}
- // pixel coordinates on a 16x20 grid, each cell 5px
- const px=(x,y,w,h,c)=>rect(x*5,y*5,w*5,h*5,c);
- px(4,1,8,2,'#33283b');px(3,3,10,5,'#3c2c37');px(4,4,8,5,'#f2b78d');px(5,6,2,1,'#202637');px(9,6,2,1,'#202637');px(7,8,2,1,'#b76561');px(3,3,10,2,'#3a2c36');px(4,2,8,1,'#56403d');
- if(cape){px(2,9,12,9,'#923f62')}
- px(4,9,8,7,business?'#27354d':robe?'#684da3':heroTier>=2?'#ae803f':'#336ba1');px(6,9,4,3,business?'#f4f0e8':robe?'#b9a2e5':'#9ec8e9');if(business){px(7,10,2,4,'#b04a61');px(4,9,2,6,'#354c70');px(10,9,2,6,'#354c70')}px(3,10,2,6,'#f0b38a');px(11,10,2,6,'#f0b38a');px(5,13,6,2,'#d4b16e');px(4,16,3,3,'#3a405b');px(9,16,3,3,'#3a405b');px(3,18,4,2,'#201f35');px(9,18,4,2,'#201f35');
- if(heroTier>=1&&!business){px(3,9,1,6,'#dfc36d');px(12,9,1,6,'#dfc36d')}if(heroTier>=2&&!business){px(7,11,2,2,'#63dbd4')}if(heroTier>=3){px(2,7,1,2,'#e9d37b');px(13,7,1,2,'#e9d37b')}if(heroTier>=4){px(2,2,2,1,'#b8ecff');px(12,2,2,1,'#b8ecff')}if(heroTier>=5){px(1,1,2,2,'#f3d477');px(13,1,2,2,'#f3d477')}if(crown){px(4,0,8,2,'#e5bd52');px(4,0,2,1,'#f7e98d');px(10,0,2,1,'#f7e98d');px(7,1,2,1,'#cc4f69')}
- if((state.goals||[]).some(g=>g.status==='done')){px(6,0,4,1,'#f5d57b');px(7,1,2,1,'#fff1b1')}
- if(sword){px(13,7,1,10,'#e8e9e4');px(12,12,3,1,'#d7b75f');px(13,17,1,2,'#513d2b')}
- if(shield){px(0,11,4,6,'#d5b66c');px(1,12,2,4,'#496da4')}
- if(staff){px(13,6,1,13,'#987148');px(12,5,3,2,'#7fd8d3')}
- if(book){px(0,12,4,4,'#e7d7ad');px(2,12,1,4,'#765b94')}if(job==='manager'){px(0,12,3,5,'#93673d');px(0,12,3,1,'#c69b59')}if(job==='it'){px(0,12,4,3,'#8ecdd8');px(0,15,4,1,'#3d4c6e')}if(job==='rehab'){px(5,10,1,4,'#f6f6f2');px(10,10,1,4,'#f6f6f2')}
- return `<svg viewBox="0 0 80 105" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="装備が変わる2Dドット絵の主人公" shape-rendering="crispEdges">${blocks.join('')}</svg>`;
+function tower(cx,cy,u,x,y,h,p){
+ for(let z=0;z<h;z++){
+  cube(cx,cy,u,x,y,z,...p);
+  const [sx,sy]=iso(cx,cy,u,x,y,z);
+  detailRect(sx-u*.56,sy+u*.87,u*.23,u*.22,'#a8e2ed');
+  detailRect(sx+u*.26,sy+u*.71,u*.24,u*.23,'#b8ebf0');
+  detailRect(sx-u*.58,sy+u*.84,u*.27,Math.max(1,u*.05),'#41566b');
+ }
+ cube(cx,cy,u,x,y,h,'#b9c8d1','#8295a0','#637987');
 }
-function updateHero(){let r=state.rpg||{},current=careers.find(c=>c[0]===state.career)||careers[0],item=gear[r.inventory?.[r.equipped]];
- el('heroAvatar').innerHTML=pixelHero();el('heroLevel').textContent='Lv.'+lv(total());el('heroTitle').textContent=lv(total())>=30?'人生の達人':lv(total())>=15?'人生の研究者':lv(total())>=7?'成長の冒険者':'人生の探究者';el('heroJob').textContent=current[1]+' '+current[2]+' Lv.'+lv(careerXP(current[0]));el('heroEquip').textContent='装備：'+(item?item[0]+' '+item[1]:'旅人の服');el('heroXP').textContent=(total()%100)+' / 100 XP';el('heroBar').style.width=(total()%100)+'%';}
-function setupRetroUI(){const main=document.querySelector('main');const cards=[...main.querySelectorAll(':scope > section.card')];
- const find=(id)=>cards.find(c=>c.querySelector('#'+id));
- const hero=document.createElement('section');hero.className='card hero';hero.id='home';hero.innerHTML='<div class="rpg-header">✦ MY LIFE QUEST · 2D ADVENTURE ✦</div><div class="rpg-avatar-wrap"><div id="heroAvatar" class="rpg-avatar"></div><div class="rpg-identity"><div class="level" id="heroLevel">Lv.1</div><div class="titleline" id="heroTitle"></div><div class="jobline" id="heroJob"></div><div class="equipmentline" id="heroEquip"></div><div class="bar"><div class="fill" id="heroBar"></div></div><div class="muted" id="heroXP"></div></div></div>';
- const nav=document.createElement('nav');nav.className='nav-rpg';nav.innerHTML='<a href="#quests">⚔ クエスト</a><a href="#focusSection">⏱ 集中</a><a href="#careerSection">🏰 職業</a><a href="#gearSection">🎒 装備</a><a href="#mapSection">🗺 マップ</a><a href="#historySection">📜 記録</a>';
- const quest=find('tasks'),focus=find('timer'),bonus=find('reflection'),form=find('form'),career=find('jobs'),gearCard=find('equipment'),map=find('world'),history=find('history');
- quest.id='quests';focus.id='focusSection';career.id='careerSection';gearCard.id='gearSection';map.id='mapSection';history.id='historySection';
- // Keep bonuses immediately before quests, so they're discoverable.
- const quick=document.createElement('div');quick.id='quickActions';
- main.insertBefore(nav,main.firstChild);main.insertBefore(hero,nav.nextSibling);
- for(const elx of [quest,focus,bonus,form])main.insertBefore(elx,hero.nextSibling);
- // Explicit desired order, after hero: quest, focus, bonus, custom quest
- hero.after(quest,focus,bonus,form);quest.querySelector('h2').textContent='⚔ 今日のクエスト 〜 家族との時間を最優先 〜';
- const bottom=document.createElement('nav');bottom.className='rpg-bottom';bottom.setAttribute('aria-label','ゲームメニュー');bottom.innerHTML='<a href="#home"><span>🏠</span>ホーム</a><a href="#quests"><span>⚔️</span>クエスト</a><a href="#focusSection"><span>⏱️</span>集中</a><a href="#careerSection"><span>🛡️</span>職業</a><a href="#gearSection"><span>🎒</span>装備</a><a href="#historySection"><span>📜</span>記録</a>';document.body.append(bottom);
- // Remove redundant static emoji hero, since the real sprite is now at the top.
- const old=[...main.querySelectorAll('.hero')].find(c=>c!==hero);if(old)old.remove();
- // Long advanced sections remain accessible but do not crowd the main daily flow.
- [find('tree'),find('careerTitles'),find('badges')].filter(Boolean).forEach(section=>{const d=document.createElement('details');d.className='rpg-details';const sum=document.createElement('summary');sum.textContent=section.querySelector('h2')?.textContent||'詳細';section.before(d);d.append(sum,section)});
-}
-setupRetroUI();
-const originalRender=render;render=function(){originalRender();updateHero()};
-
-save();render();
-</script><script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script><script>
-/* This is an additive layer. Existing localStorage key and save files are preserved. */
-(()=>{
-const habits=[
-{name:'ジャーナリング',icon:'📝',desc:'積み重ねることの大切さ',cat:'create',job:'writer',xp:15},
-{name:'コーヒー事業をすすめる',icon:'☕',desc:'好きなことを少しずつ育てる',cat:'coffee',job:'coffee',xp:20},
-{name:'読書',icon:'📚',desc:'少しの休息で、より学ぶ努力ができる',cat:'learn',job:'scholar',xp:15},
-{name:'ブログ記載（もやもやを吐き出す）',icon:'✍️',desc:'人生とは学びと成長の連続である',cat:'create',job:'writer',xp:20},
-{name:'筋トレ・散歩',icon:'🏃',desc:'絶えず前進し、目標は常に前方に',cat:'health',job:'wellness',xp:15},
-{name:'作業療法士勉強',icon:'📖',desc:'一日一歩、その一歩で新しい自分へ',cat:'learn',job:'rehab',xp:20},
-{name:'家族との時間を楽しむ',icon:'🏡',desc:'大切な人と過ごす時間も冒険の成果',cat:'family',job:'family',xp:25},
-{name:'自分のために休む',icon:'🌙',desc:'休むことも未来への準備',cat:'health',job:'wellness',xp:15}
-];
-for(const [i,h] of habits.entries()){let t=state.tasks.find(t=>t.id===90000+i)||state.tasks.find(t=>t.name===h.name);if(t){t.kind='habit';if(!t.habitDesc)t.habitDesc=h.desc;}else if(!(state.deletedHabits||[]).includes(h.name))state.tasks.push({id:90000+i,name:h.name,cat:h.cat,job:h.job,xp:h.xp,mode:'action',kind:'habit',habitDesc:h.desc});}
-save();
-const main=document.querySelector('main'),quest=document.getElementById('quests');if(!main||!quest)return;
-const panel=document.createElement('section');panel.className='habit-panel';panel.id='dailyHabits';
-const nav=document.querySelector('.nav-rpg');if(nav){const a=document.createElement('a');a.href='#dailyHabits';a.textContent='📋 毎日の習慣';nav.prepend(a)}
-quest.before(panel);
-let dayOffset=0;
-const localDay=(d)=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
-const dateAt=(n)=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+n);return d};
-const logged=(name,date)=>state.log.some(l=>l.name===name&&localDay(new Date(l.time))===date);
-function paint(){
-const selected=dateAt(dayOffset),day=localDay(selected),today=localDay(new Date());
-const visibleHabits=state.tasks.filter(t=>t.kind==='habit').map(t=>({name:t.name,icon:habits.find(h=>h.name===t.name)?.icon||'✦',desc:t.habitDesc||'今日の積み重ね',cat:t.cat,job:t.job,xp:t.xp,id:t.id}));const done=visibleHabits.filter(h=>logged(h.name,day)).length;
-panel.replaceChildren();
-const status=document.createElement('div');status.className='habit-status';status.innerHTML='<strong>👑 Lv.'+lv(total()).toLocaleString('ja-JP')+'</strong>';panel.append(status);
-const summary=document.createElement('div');summary.className='habit-summary';summary.innerHTML='<div class="habit-sprite" aria-label="冒険者アバター">'+pixelHero()+'</div><div style="flex:1"><b>経験値　'+(total()%100)+' / 100</b><div class="bar"><div class="fill" style="width:'+(total()%100)+'%"></div></div><b>選択日の習慣　'+done+' / '+visibleHabits.length+'</b><div class="bar"><div class="fill" style="width:'+(visibleHabits.length?done/visibleHabits.length*100:0)+'%"></div></div></div>';panel.append(summary);
-const week=document.createElement('div');week.className='habit-week';const days=['日','月','火','水','木','金','土'];for(let i=-6;i<=0;i++){const d=dateAt(i),btn=document.createElement('button');btn.className='habit-day'+(i===dayOffset?' active':'');btn.innerHTML=days[d.getDay()]+'<b>'+d.getDate()+'</b>';btn.onclick=()=>{dayOffset=i;paint()};week.append(btn)}panel.append(week);
-const heading=document.createElement('h2');heading.className='habit-head';heading.textContent=(day===today?'今日':(selected.getMonth()+1)+'月'+selected.getDate()+'日')+'の習慣';panel.append(heading);
-const list=document.createElement('div');list.className='habit-list';for(const h of visibleHabits){const done=logged(h.name,day),row=document.createElement('div');row.className='habit-item'+(done?' done':'');const ico=document.createElement('span');ico.className='habit-emoji';ico.textContent=h.icon;const info=document.createElement('div');info.className='habit-content';const b=document.createElement('b');b.textContent=h.name;const small=document.createElement('small');small.textContent=h.desc+' · +'+h.xp+' XP';info.append(b,small);const btn=document.createElement('button');btn.className='habit-check'+(done?' checked':'');btn.textContent=done?'✓':'';btn.setAttribute('aria-label',h.name+(done?' 達成済み':' 達成する'));btn.disabled=day!==today||done;btn.onclick=()=>{if(logged(h.name,today))return;addLog(h.name,h.cat,h.xp,undefined,h.job);paint()};const edit=document.createElement('button');edit.type='button';edit.textContent='編集';edit.className='secondary';edit.style.cssText='font-size:11px;padding:6px;min-width:44px';edit.onclick=()=>window.questEditTask?.(h.id);row.append(ico,info,btn,edit);list.append(row)}panel.append(list);
-const note=document.createElement('p');note.className='habit-note';note.textContent='チェックは当日1回のみ。過去の日付は振り返り用です。すべて達成しなくてもペナルティはありません。家族や休息の時間も経験値になります。';panel.append(note);
-}
-const prev=render;render=function(){prev();paint()};paint();
-})();
-</script><style>
-.pixel-icon{display:inline-block;width:24px;height:24px;vertical-align:middle;image-rendering:pixelated;flex:none}.pixel-icon svg{display:block;width:100%;height:100%;image-rendering:pixelated}.habit-emoji .pixel-icon{width:30px;height:30px}.job .em .pixel-icon{width:40px;height:40px}.careerhero .em .pixel-icon{width:54px;height:54px}.rpg-bottom .pixel-icon{width:21px;height:21px;margin:0 auto 3px}.pixel-icon--tiny{width:19px;height:19px}.sprite-controls{margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.sprite-controls select{width:auto;max-width:210px;padding:7px}.sprite-tier{font-size:12px;color:#e6d5ff}.quest-category-icon{margin-right:5px}
-</style><script>
-/* 9.4 lightweight, original pixel icons: no external image assets. */
-const iconPatterns={
- home:['00111100','01111110','11111111','11011011','11011011','11111111','11111111','00000000'],
- quests:['00011000','00011000','00011000','00111100','00111100','01111110','00011000','00011000'],
- focus:['00111100','01000010','10011001','10111001','10110001','10000001','01000010','00111100'],
- career:['00011000','00111100','01111110','11011011','11011011','11111111','00100100','00100100'],
- gear:['00011000','00100100','01111110','11000011','11000011','11111111','01111110','00000000'],
- history:['01111110','01000010','01011010','01000010','01011010','01000010','01111110','00000000'],
- manager:['01111110','11000011','11111111','11011011','11111111','11111111','00100100','00100100'],
- it:['01111110','11000011','10100101','10011001','10100101','11000011','01111110','00111100'],
- rehab:['00011000','00011000','01111110','01111110','00011000','00011000','00011000','00000000'],
- coffee:['00000000','01111100','01000110','01000110','01000110','01111100','00111000','00000000'],
- family:['00011000','00111100','01111110','11111111','11011011','11011011','11111111','00000000'],
- learn:['00111100','01100110','11000011','11011011','11011011','11000011','01111110','00000000'],
- health:['00000000','00100100','01111110','11111111','11111111','01111110','00111100','00011000'],
- create:['00000011','00000110','00001100','00011000','00110000','01100000','11000000','00000000'],
- practice:['01111110','01000010','01111110','01000010','01011010','01000010','01111110','00000000'],
- community:['00011000','00111100','01111110','11011011','11011011','11111111','00100100','00000000'],
- outdoor:['00011000','00111100','01111110','11111111','01111110','00100100','00100100','00000000'],
- writer:['00000011','00000110','00001100','00011000','00110000','01100000','11000000','00000000'],
- scholar:['00111100','01100110','11000011','11011011','11011011','11000011','01111110','00000000'],
- mountain:['00011000','00111100','01111110','11111111','01111110','00100100','00100100','00000000'],
- photo:['00000000','00111100','11111111','11011011','11011011','11111111','01111110','00000000'],
- wellness:['00000000','00100100','01111110','11111111','11111111','01111110','00111100','00011000'],
- regional:['00011000','00111100','01111110','11011011','11011011','11111111','00100100','00000000'],
- business:['01111110','11000011','11111111','11011011','11111111','11111111','00100100','00100100'],
- default:['00111100','01111110','11111111','11111111','11111111','11111111','01111110','00111100']};
-const iconColors={home:'#9cddf0',quests:'#f4d58a',focus:'#b4a0fc',career:'#dfbd86',gear:'#e4ae71',history:'#c8b3eb',manager:'#8bb7ef',it:'#8bdde2',rehab:'#f6f5e9',coffee:'#dca16d',family:'#f4acbf',learn:'#c6b4f7',health:'#91d6a4',create:'#e3c5f6',practice:'#e6c87e',community:'#a6d7f3',outdoor:'#9ad6b0'};
-function pixelIcon(type,small=false){const key=iconPatterns[type]?type:'default',rows=iconPatterns[key],fill=iconColors[type]||'#b8a5e9';const squares=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++)if(rows[y][x]==='1')squares.push('<rect x="'+x+'" y="'+y+'" width="1" height="1"/>');return '<span class="pixel-icon'+(small?' pixel-icon--tiny':'')+'" aria-hidden="true"><svg viewBox="0 0 8 8" shape-rendering="crispEdges"><g fill="'+fill+'">'+squares.join('')+'</g></svg></span>'}
-function decoratePixels(){
- document.querySelectorAll('.habit-emoji').forEach((e,i)=>{if(e.dataset.pixelDone)return;const h=e.closest('.habit-item')?.querySelector('.habit-content b')?.textContent||'';const type=/コーヒー/.test(h)?'coffee':/家族/.test(h)?'family':/休|筋トレ|散歩/.test(h)?'health':/読書|勉強/.test(h)?'learn':'create';e.innerHTML=pixelIcon(type);e.dataset.pixelDone='1'});
- document.querySelectorAll('.job .em,.careerhero .em').forEach(e=>{if(e.dataset.pixelDone)return;const text=e.parentElement?.textContent||'';const c=careers.find(c=>text.includes(c[2]));e.innerHTML=pixelIcon(c?.[0]||'career');e.dataset.pixelDone='1'});
- document.querySelectorAll('#tasks .task').forEach(e=>{const first=e.querySelector('span');if(!first||first.dataset.pixelDone)return;const task=state.tasks.find(t=>t.name===first.textContent);if(task){first.insertAdjacentHTML('afterbegin',pixelIcon(task.job||task.cat,true)+' ');first.dataset.pixelDone='1'}});
- document.querySelectorAll('.rpg-bottom a').forEach(a=>{const icon=a.querySelector('span');if(icon&&!icon.dataset.pixelDone){icon.innerHTML=pixelIcon(a.dataset.tab||'home');icon.dataset.pixelDone='1'}});
-}
-const renderBefore94=render;render=function(){renderBefore94();decoratePixels();refreshSpriteOptions()};
-function refreshSpriteOptions(){const holder=document.querySelector('.rpg-identity');if(!holder)return;let controls=document.getElementById('spriteControls');if(!controls){controls=document.createElement('div');controls.id='spriteControls';controls.className='sprite-controls';controls.innerHTML='<label for="costumeSelect">衣装</label><select id="costumeSelect"><option value="job">職業に合わせる</option><option value="suit">スーツ姿</option></select><span id="spriteTier" class="sprite-tier"></span>';holder.append(controls);document.getElementById('costumeSelect').addEventListener('change',e=>{state.costume=e.target.value;save();render()})}document.getElementById('costumeSelect').value=state.costume||'job';const level=lv(total());document.getElementById('spriteTier').textContent='進化段階 '+(level>=5000?6:level>=1000?5:level>=500?4:level>=100?3:level>=50?2:1)+' / 6';}
-render();
-</script>
-<script>
-/* 9.4: single-page tab routing, preserving game logic and saved data. */
-(()=>{
-const main=document.querySelector('main');if(!main)return;
-const tabs=[['home','🏠','ホーム'],['quests','⚔️','クエスト'],['focus','⏱️','集中'],['career','🛡️','職業'],['gear','🎒','装備'],['history','📜','記録']];
-const groups={home:[],quests:[],focus:[],career:[],gear:[],history:[]};
-const match=(section)=>{
- if(section.id==='dailyHabits')return 'home';
- if(section.classList.contains('hero'))return 'home';
- const has=(id)=>!!section.querySelector('#'+id);
- if(has('history')||has('export'))return 'history';
- if(has('timer')||has('startTimer'))return 'focus';
- if(has('equipment')||has('openChest'))return 'gear';
- if(has('jobs')||has('careerTitles')||has('skills')||has('tree')||has('badges')||has('progress'))return 'career';
- return 'quests';
-};
-for(const section of main.querySelectorAll(':scope > section.card,:scope > section.habit-panel,:scope > details.rpg-details')){
- const tab=match(section);section.dataset.questTab=tab;groups[tab].push(section);
-}
-const nav=document.querySelector('.nav-rpg');if(nav)nav.remove();
-const bottom=document.querySelector('.rpg-bottom');if(!bottom)return;
-bottom.replaceChildren();
-const intro=document.createElement('p');intro.className='tab-intro';main.prepend(intro);
-// The old v8 heading is replaced by the habit dashboard, not shown twice.
-for(const el of Array.from(main.children)){
- if(el.matches('h1, p.sub, footer'))el.style.display='none';
-}
-function activate(tab){
- if(!groups[tab])tab='home';
- for(const [name,sections] of Object.entries(groups))for(const el of sections)el.classList.toggle('tab-visible',name===tab);
- for(const link of bottom.querySelectorAll('a'))link.classList.toggle('active',link.dataset.tab===tab);
- intro.textContent={home:'今日の小さな一歩を、冒険の経験値に。',quests:'クエストに挑戦しよう。',focus:'集中した時間を経験値に。',career:'職業と能力を育てよう。',gear:'装備と宝箱を確認しよう。',history:'冒険の記録とバックアップ。'}[tab];
- window.scrollTo(0,0);
-}
-for(const [id,emoji,label] of tabs){const a=document.createElement('a');a.href='#'+id;a.dataset.tab=id;a.innerHTML='<span>'+emoji+'</span>'+label;a.addEventListener('click',e=>{e.preventDefault();activate(id)});bottom.append(a)}
-activate('home');decoratePixels();
-})();
-</script><script>
-/* v9.5 — Derived entirely from the existing saved action log. */
-(()=>{
- const historySection=document.getElementById('history')?.closest('section.card');
- if(!historySection)return;
- const root=document.createElement('section');root.className='quest-stats';root.id='questStats';root.dataset.questTab='history';root.classList.add('tab-visible');
- root.innerHTML=`<h2>📊 冒険の記録・成長ダッシュボード</h2>
- <p class="stat-muted">達成したクエストと習慣を切り替えて確認できます。記録を取り消すと集計にも反映されます。</p>
- <div class="stat-switch" id="statType"></div><div class="stat-period" id="statPeriod"></div>
- <div class="stat-cards" id="statCards"></div>
- <h3 style="font-size:15px;margin:16px 0 4px">達成数の推移</h3><div class="stat-chart" id="statChart" role="img" aria-label="達成回数の棒グラフ"></div>
- <div class="stat-cal-head"><button id="statPrev" type="button" aria-label="前の月">◀</button><b id="statMonth"></b><button id="statNext" type="button" aria-label="次の月">▶</button></div>
- <div class="stat-calendar" id="statCalendar"></div><p class="stat-muted">色が濃いほど、その日の達成回数が多くなります。日付を押すと内容を確認できます。</p>
- <div class="stat-details" id="statDetails"></div>`;
- historySection.parentElement.insertBefore(root,historySection);
- const $=id=>root.querySelector('#'+id);
- const pad=n=>String(n).padStart(2,'0');
- const dateKey=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
- const parseDate=k=>{const [y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d)};
- const today=dateKey(new Date());let mode='quest',period='week',month=new Date();month.setDate(1);let chosen=today;
- const habitNames=new Set(['ジャーナリング','コーヒー事業をすすめる','読書','ブログ記載（もやもやを吐き出す）','筋トレ・散歩','作業療法士勉強','家族との時間を楽しむ','自分のために休む']);
- // Habit entries in earlier versions were stored in the same log as quests.
- function isHabit(l){return habitNames.has(l.name)||Boolean(l.habit===true||l.type==='habit')}
- function entries(){return (Array.isArray(state.log)?state.log:[]).filter(l=>mode==='habit'?isHabit(l):!isHabit(l)).map(l=>{
-  const d=new Date(l.time);return {...l,_day:Number.isNaN(d.getTime())?'':dateKey(d)}
- }).filter(l=>l._day)}
- const sum=(list,key)=>list.reduce((n,l)=>n+(Number(l[key])||0),0);
- function periodStart(k){const d=parseDate(k);if(period==='week'){d.setDate(d.getDate()-(d.getDay()+6)%7)}else if(period==='month'){d.setDate(1)}else if(period==='year'){d.setMonth(0,1)}else if(period==='all'){return null}return dateKey(d)}
- function periodEnd(k){const d=parseDate(k);if(period==='week')d.setDate(d.getDate()+6-(d.getDay()+6)%7);else if(period==='month')d.setMonth(d.getMonth()+1,0);else if(period==='year')d.setMonth(11,31);else return null;return dateKey(d)}
- function makeButton(text,value,active,fn){const b=document.createElement('button');b.type='button';b.textContent=text;b.className=active===value?'selected':'';b.onclick=()=>{fn(value);paint()};return b}
- function graph(list){const bins=[];const d=new Date();if(period==='week'){const start=parseDate(periodStart(today));for(let i=0;i<7;i++){const x=new Date(start);x.setDate(x.getDate()+i);const k=dateKey(x);bins.push({label:['日','月','火','水','木','金','土'][x.getDay()],count:list.filter(l=>l._day===k).length})}}
- else if(period==='month'){const start=new Date(d.getFullYear(),d.getMonth(),1);const n=Math.ceil((new Date(d.getFullYear(),d.getMonth()+1,0).getDate()+((start.getDay()+6)%7))/7);for(let i=0;i<n;i++)bins.push({label:(i+1)+'週',count:list.filter(l=>{const x=parseDate(l._day);return x.getFullYear()===d.getFullYear()&&x.getMonth()===d.getMonth()&&Math.floor((x.getDate()-1+((start.getDay()+6)%7))/7)===i}).length})}
- else if(period==='year'){for(let i=0;i<12;i++)bins.push({label:(i+1)+'月',count:list.filter(l=>{const x=parseDate(l._day);return x.getFullYear()===d.getFullYear()&&x.getMonth()===i}).length})}
- else {const years=[...new Set(list.map(l=>parseDate(l._day).getFullYear()))].sort((a,b)=>a-b);for(const y of years)bins.push({label:String(y),count:list.filter(l=>parseDate(l._day).getFullYear()===y).length})}
- const el=$('statChart');el.replaceChildren();if(!bins.length){el.textContent='まだ記録がありません。';return}const max=Math.max(1,...bins.map(b=>b.count));for(const bin of bins){const bar=document.createElement('div');bar.className='stat-bar';const val=document.createElement('span');val.className='val';val.textContent=bin.count;const fill=document.createElement('div');fill.className='fillbar';fill.style.height=Math.max(2,bin.count/max*88)+'px';const label=document.createElement('small');label.textContent=bin.label;bar.title=bin.label+'：'+bin.count+'回';bar.append(val,fill,label);el.append(bar)}}
- function paint(){const list=entries();const type=$('statType');type.replaceChildren();type.append(makeButton('⚔ クエスト','quest',mode,v=>mode=v),makeButton('✦ 習慣','habit',mode,v=>mode=v));const p=$('statPeriod');p.replaceChildren();for(const [k,v] of [['week','週'],['month','月'],['year','年'],['all','累計']])p.append(makeButton(v,k,period,x=>period=x));
- const start=periodStart(today),end=periodEnd(today);const selected=list.filter(l=>!start||(l._day>=start&&l._day<=end));const days=new Set(selected.map(l=>l._day)).size;const cards=$('statCards');cards.replaceChildren();for(const [label,val] of [['達成回数',selected.length.toLocaleString('ja-JP')+' 回'],['活動した日数',days.toLocaleString('ja-JP')+' 日'],['獲得XP',sum(selected,'xp').toLocaleString('ja-JP')+' XP'],['累計達成',list.length.toLocaleString('ja-JP')+' 回']]){const c=document.createElement('div');c.className='stat-card';const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=val;c.append(small,strong);cards.append(c)}graph(list);
- $('statMonth').textContent=month.getFullYear()+'年'+(month.getMonth()+1)+'月';$('statNext').disabled=month.getFullYear()===new Date().getFullYear()&&month.getMonth()===new Date().getMonth();const cal=$('statCalendar');cal.replaceChildren();for(const w of ['月','火','水','木','金','土','日']){const x=document.createElement('div');x.className='weekday';x.textContent=w;cal.append(x)}const first=(month.getDay()+6)%7,daysInMonth=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();for(let i=0;i<first;i++){const x=document.createElement('div');x.className='stat-day empty';cal.append(x)}for(let day=1;day<=daysInMonth;day++){const k=dateKey(new Date(month.getFullYear(),month.getMonth(),day));const n=list.filter(l=>l._day===k).length;const b=document.createElement('button');b.type='button';b.className='stat-day'+(k===today?' today':'')+(k===chosen?' chosen':'');b.dataset.n=String(Math.min(4,n));b.innerHTML='<span>'+day+'</span>'+(n?'<em>'+n+'回</em>':'');b.onclick=()=>{chosen=k;paint()};cal.append(b)}
- const detail=$('statDetails');detail.replaceChildren();const title=document.createElement('b');title.textContent=chosen.replaceAll('-','/')+' の'+(mode==='habit'?'習慣':'クエスト');detail.append(title);const daily=list.filter(l=>l._day===chosen);if(!daily.length){const empty=document.createElement('p');empty.className='stat-muted';empty.textContent='この日の記録はありません。';detail.append(empty)}else{const summary=document.createElement('p');summary.className='stat-muted';summary.textContent=daily.length+'回達成・'+sum(daily,'xp')+' XP';detail.append(summary);const ul=document.createElement('ul');daily.forEach(l=>{const li=document.createElement('li');li.textContent=l.name+' · +'+(Number(l.xp)||0)+' XP'+(l.minutes?' · '+l.minutes+'分':'');ul.append(li)});detail.append(ul)}}
- $('statPrev').onclick=()=>{month.setMonth(month.getMonth()-1);chosen=dateKey(month);paint()};$('statNext').onclick=()=>{const next=new Date(month);next.setMonth(next.getMonth()+1);if(next>new Date())return;month=next;chosen=dateKey(month);paint()};
- const previousRender=render;render=function(){previousRender();paint()};
- // Route the new section with the existing history tab without replacing its navigation.
- const oldLinks=document.querySelectorAll('.rpg-bottom a');for(const link of oldLinks){if(link.dataset.tab==='history')link.addEventListener('click',()=>root.classList.add('tab-visible'));else link.addEventListener('click',()=>root.classList.remove('tab-visible'))}
- const active=document.querySelector('.rpg-bottom a.active');root.classList.toggle('tab-visible',active?.dataset.tab==='history');paint();
-})();
-</script><script>
-/* v9.6: goals, editable tasks and personal revenue, saved inside the existing backup state. */
-(()=>{
- if(!Array.isArray(state.goals))state.goals=[];
- if(!state.finance||typeof state.finance!=='object')state.finance={target:0,months:{}};
- if(!state.finance.months)state.finance.months={};
- const $=(tag,attrs={},content='')=>{const x=document.createElement(tag);Object.assign(x,attrs);if(content)x.textContent=content;return x};
- const fmt=n=>(Number(n)||0).toLocaleString('ja-JP');
- const ymd=(d)=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0')].join('-');
- const career=document.getElementById('jobs')?.closest('section.card');
- const quest=document.getElementById('tasks')?.closest('section.card');
- if(!career||!quest)return;
- // Editable quest and habit definitions. The historical activity log is deliberately not rewritten.
- const editor=$('section',{className:'q96',id:'q96Editor'});
- editor.innerHTML=`<h2>✎ クエスト・習慣を編集</h2><p class="q96-note">名前・経験値・職業・種類を変更できます。過去の達成記録とXPはそのまま残ります。</p>
- <form id="q96TaskForm"><input type="hidden" id="q96TaskId"><label>名前</label><input id="q96TaskName" maxlength="100" required>
- <div class="q96-grid"><div><label>経験値（1〜1000）</label><input id="q96TaskXP" type="number" min="1" max="1000" required></div><div><label>種類</label><select id="q96TaskKind"><option value="quest">クエスト</option><option value="habit">毎日の習慣</option></select></div></div>
- <div class="q96-grid"><div><label>職業</label><select id="q96TaskJob"></select></div><div><label>カテゴリー</label><select id="q96TaskCat"></select></div></div>
- <label>習慣の説明（任意）</label><input id="q96TaskDesc" maxlength="150"><div class="q96-actions"><button type="submit">変更を保存</button><button type="button" class="alt" id="q96TaskCancel">キャンセル</button></div></form>`;
- quest.parentElement.insertBefore(editor,quest.nextSibling);
- const field=id=>document.getElementById(id);
- careers.forEach(c=>field('q96TaskJob').add(new Option(c[2],c[0])));
- cats.forEach(c=>field('q96TaskCat').add(new Option(c[2],c[0])));
- editor.querySelector('form').hidden=true;
- window.questEditTask=id=>{
-  const t=state.tasks.find(t=>String(t.id)===String(id));if(!t)return;
-  field('q96TaskId').value=String(t.id);field('q96TaskName').value=t.name;field('q96TaskXP').value=t.xp;
-  field('q96TaskKind').value=t.kind==='habit'?'habit':'quest';field('q96TaskJob').value=t.job;
-  field('q96TaskCat').value=t.cat;field('q96TaskDesc').value=t.habitDesc||'';
-  editor.querySelector('form').hidden=false;
-  const nav=document.querySelector('.rpg-bottom a[data-tab="quests"]');nav?.click();
-  editor.classList.add('tab-visible');editor.scrollIntoView({behavior:'smooth',block:'start'});
- };
- field('q96TaskCancel').onclick=()=>{editor.querySelector('form').hidden=true};
- field('q96TaskForm').onsubmit=e=>{
-  e.preventDefault();const t=state.tasks.find(t=>String(t.id)===field('q96TaskId').value);if(!t)return;
-  const name=field('q96TaskName').value.trim(),xp=Number(field('q96TaskXP').value);
-  if(!name||!Number.isInteger(xp)||xp<1||xp>1000){alert('名前と1〜1000の経験値を入力してください');return}
-  if(state.tasks.some(x=>x!==t&&x.name===name)){alert('同じ名前のクエスト・習慣が存在します');return}
-  t.name=name;t.xp=xp;t.job=field('q96TaskJob').value;t.cat=field('q96TaskCat').value;t.kind=field('q96TaskKind').value;
-  t.habitDesc=field('q96TaskDesc').value.trim();t.mode='action';
-  save();render();editor.querySelector('form').hidden=true;alert('変更を保存しました。過去の達成記録は維持されます。');
- };
- // Keep editor in the quests tab; when editing a home habit, switch to quests so it is visible.
- const originalEdit=window.questEditTask;
- window.questEditTask=id=>{document.querySelector('.rpg-bottom a[data-tab="quests"]')?.click();originalEdit(id)};
- editor.dataset.questTab='quests';
- document.querySelectorAll('.rpg-bottom a').forEach(a=>a.addEventListener('click',()=>editor.classList.toggle('tab-visible',a.dataset.tab==='quests')));
- editor.classList.toggle('tab-visible',document.querySelector('.rpg-bottom a.active')?.dataset.tab==='quests');
-
- const goals=$('section',{className:'q96',id:'q96Goals'});
- goals.innerHTML=`<h2>🏰 中ボス・目標の間</h2><p class="q96-note">月・四半期・年のゴールを設定。達成するとXPと称号を獲得します。未達成なら「次期へ繰り越し」できます。</p>
- <form id="q96GoalForm"><input type="hidden" id="q96GoalId"><label>ゴールの名前</label><input id="q96GoalName" maxlength="120" placeholder="例：経営の本を3冊読む" required>
- <div class="q96-grid"><div><label>期間</label><select id="q96GoalType"><option value="month">月間</option><option value="quarter">四半期</option><option value="year">年間</option></select></div><div><label>対象期間</label><input id="q96GoalPeriod" placeholder="2026-11" required></div></div>
- <div class="q96-grid"><div><label>達成XP</label><input id="q96GoalXP" type="number" min="10" max="10000" value="300" required></div><div><label>達成条件・メモ（任意）</label><input id="q96GoalMemo" maxlength="200"></div></div>
- <div class="q96-actions"><button type="submit" id="q96GoalSubmit">中ボスを登録</button><button type="button" class="alt" id="q96GoalClear">入力をクリア</button></div></form>
- <h3>挑戦中の中ボス</h3><div id="q96GoalOpen"></div><h3>🏅 獲得した称号コレクション</h3><div id="q96GoalDone"></div>`;
- career.parentElement.insertBefore(goals,career.nextSibling);goals.dataset.questTab='career';
- const gp=()=>{const d=new Date(),type=field('q96GoalType').value;return type==='month'?ymd(d):type==='quarter'?d.getFullYear()+'-Q'+(Math.floor(d.getMonth()/3)+1):String(d.getFullYear())};
- field('q96GoalPeriod').value=gp();field('q96GoalType').onchange=()=>field('q96GoalPeriod').value=gp();
- const validPeriod=(type,p)=>type==='month'?/^\d{4}-(0[1-9]|1[0-2])$/.test(p):type==='quarter'?/^\d{4}-Q[1-4]$/.test(p):/^\d{4}$/.test(p);
- const nextPeriod=(type,p)=>{if(type==='month'){const [y,m]=p.split('-').map(Number);return m===12?(y+1)+'-01':y+'-'+String(m+1).padStart(2,'0')}if(type==='quarter'){const [y,q]=p.split('-Q').map(Number);return q===4?(y+1)+'-Q1':y+'-Q'+(q+1)}return String(Number(p)+1)};
- const goalType={month:'月間',quarter:'四半期',year:'年間'};
- function resetGoal(){field('q96GoalForm').reset();field('q96GoalId').value='';field('q96GoalPeriod').value=gp();field('q96GoalSubmit').textContent='中ボスを登録'}
- field('q96GoalClear').onclick=resetGoal;
- field('q96GoalForm').onsubmit=e=>{e.preventDefault();const id=field('q96GoalId').value,type=field('q96GoalType').value,period=field('q96GoalPeriod').value.trim(),name=field('q96GoalName').value.trim(),xp=Number(field('q96GoalXP').value);
-  if(!validPeriod(type,period)){alert('期間は月間:2026-11、四半期:2026-Q4、年間:2026 の形式で入力してください');return}
-  if(!name||!Number.isInteger(xp)||xp<10||xp>10000){alert('ゴール名と10〜10000XPを入力してください');return}
-  let g=state.goals.find(g=>String(g.id)===id);if(g&&g.status==='done'){alert('達成済みゴールは変更できません');return}
-  if(!g){g={id:Date.now()+Math.random(),status:'open',rollovers:0,createdAt:new Date().toISOString()};state.goals.push(g)}
-  Object.assign(g,{name,type,period,xp,memo:field('q96GoalMemo').value.trim()});save();resetGoal();paintGoals();
- };
- function paintGoals(){const open=field('q96GoalOpen'),done=field('q96GoalDone');open.replaceChildren();done.replaceChildren();
-  const sorted=[...state.goals].sort((a,b)=>String(b.period).localeCompare(String(a.period)));
-  for(const g of sorted){const box=$('div',{className:'q96-card'});const heading=$('b',{},(g.status==='done'?'🏅 ':'🐉 ')+g.name);box.append(heading,$('p',{className:'q96-note'},goalType[g.type]+' · '+g.period+' · +'+fmt(g.xp)+' XP'+(g.rollovers?' · 繰越'+g.rollovers+'回':'')));
-   if(g.memo)box.append($('p',{className:'q96-note'},g.memo));
-   if(g.status==='done'){box.append($('strong',{},g.title||'中ボス討伐者'));done.append(box);continue}
-   const actions=$('div',{className:'q96-actions'});
-   const edit=$('button',{type:'button',className:'alt'},'編集');edit.onclick=()=>{field('q96GoalId').value=g.id;field('q96GoalName').value=g.name;field('q96GoalType').value=g.type;field('q96GoalPeriod').value=g.period;field('q96GoalXP').value=g.xp;field('q96GoalMemo').value=g.memo||'';field('q96GoalSubmit').textContent='変更を保存';goals.scrollIntoView({behavior:'smooth'})};
-   const roll=$('button',{type:'button',className:'alt'},'次期へ繰り越し');roll.onclick=()=>{if(!confirm(g.period+' → '+nextPeriod(g.type,g.period)+' に繰り越しますか？'))return;g.period=nextPeriod(g.type,g.period);g.rollovers=(g.rollovers||0)+1;save();paintGoals()};
-   const win=$('button',{type:'button'},'🏆 討伐・達成');win.onclick=()=>{if(!confirm('「'+g.name+'」を達成にしますか？ XPと称号を一度だけ獲得します。'))return;if(g.status==='done')return;
-    g.status='done';g.completedAt=new Date().toISOString();g.title=goalType[g.type]+'の中ボス討伐者 '+state.goals.filter(x=>x.status==='done').length+'号';
-    addLog('中ボス討伐：'+g.name,'practice',Number(g.xp)||0,undefined,'manager');save();render();paintGoals();
-   };
-   const del=$('button',{type:'button',className:'warn'},'削除');del.onclick=()=>{if(!confirm('未達成ゴール「'+g.name+'」を削除しますか？'))return;state.goals=state.goals.filter(x=>x!==g);save();paintGoals()};
-   actions.append(edit,roll,win,del);box.append(actions);open.append(box);
+function tree(cx,cy,u,x,y,tall=1){
+ const trunk=['#ad8052','#79543a','#62422e'];
+ for(let z=0;z<=tall;z++)cube(cx,cy,u*.55,x,y,z,...trunk);
+ const foliage=[['#9edb81','#4f9b55','#367e48'],['#86c975','#4a9755','#347b46'],['#71bb70','#3e8950','#2b6d43']];
+ for(let z=tall;z<=tall+2;z++){
+  const layer=z===tall+2?0:1;
+  for(let a=-layer;a<=layer;a++)for(let b=-layer;b<=layer;b++){
+   if(layer&&Math.abs(a)+Math.abs(b)===2&&hash(x+a,y+b,z)>.55)continue;
+   cube(cx,cy,u*.55,x+a*.55,y+b*.55,z+1,...foliage[Math.floor(hash(x+a,y+b,z)*3)]);
   }
-  if(!open.children.length)open.textContent='挑戦中のゴールはありません。';if(!done.children.length)done.textContent='まだ称号はありません。最初の中ボスを討伐しましょう！';
  }
+}
+function shrub(cx,cy,u,x,y){cube(cx,cy,u*.34,x,y,.15,'#96d578','#4c9852','#387c45')}
+function car(cx,cy,u,x,y,color){
+ cube(cx,cy,u*.52,x,y,.2,color,'#5a6671','#455365');
+ cube(cx,cy,u*.34,x,y,.72,'#d2eff0','#7fa7b5','#608b9c');
+ const [sx,sy]=iso(cx,cy,u,x,y,.2);detailRect(sx-u*.3,sy+u*.64,u*.18,u*.12,'#202d3b');detailRect(sx+u*.15,sy+u*.56,u*.18,u*.12,'#202d3b');
+}
+function landmark(cx,cy,u,x,y,kind,progress){if(progress<=0)return;const [sx,sy]=iso(cx,cy,u,x,y,0);const k=Math.max(1,Math.ceil(progress*9));if(kind==='tokyo'||kind==='eiffel'){const c=kind==='tokyo'?'#e65c50':'#9d8466',dark=kind==='tokyo'?'#a83e3e':'#6f604e';for(let z=0;z<k;z++){let width=z<3?u*.85:z<6?u*.57:u*.28;const yy=sy-z*u*.85;ctx.fillStyle=c;ctx.fillRect(sx-width/2,yy,width,Math.max(2,u*.95));ctx.fillStyle=dark;ctx.fillRect(sx-width/2,yy,Math.max(1,u*.16),Math.max(2,u*.95));if(z===3||z===6){ctx.fillStyle='#e8e1c3';ctx.fillRect(sx-u*.6,yy,u*1.2,Math.max(2,u*.25))}}if(progress>=1){ctx.fillStyle='#f3e8cc';ctx.fillRect(sx-1,sy-9*u,2,Math.max(4,u))}}
+else if(kind==='wall'){for(let i=0;i<Math.ceil(progress*8);i++){const xx=x+i*.6,yy=y+(i%3)*.45;cube(cx,cy,u,xx,yy,1,'#d4c5a4','#9b8e73','#85775f');if(i%3===0)cube(cx,cy,u,xx,yy,2,'#e4d5b4','#b4a487','#9b8c72')}}
+else if(kind==='pyramid'){for(let z=0;z<Math.ceil(progress*7);z++){const w=(7-z)*u*.55;ctx.fillStyle=z%2?'#d9b96f':'#efcf86';ctx.fillRect(sx-w/2,sy-z*u*.65,w,Math.max(2,u*.65))}}
+else if(kind==='opera'){for(let i=0;i<Math.ceil(progress*5);i++){ctx.fillStyle='#f5e9d7';ctx.beginPath();ctx.moveTo(sx+(i-2)*u*.55,sy-u*.5);ctx.lineTo(sx+(i-2)*u*.55+u*.25,sy-u*2.6);ctx.lineTo(sx+(i-2)*u*.55+u*.6,sy-u*.5);ctx.fill()}}}
+const landmarks=[{name:'東京タワー',kind:'tokyo',start:180,end:1800,x:2,y:2},{name:'エッフェル塔',kind:'eiffel',start:1800,end:4800,x:8,y:2},{name:'万里の長城',kind:'wall',start:4800,end:10800,x:2,y:8},{name:'ピラミッド',kind:'pyramid',start:10800,end:21000,x:8,y:8},{name:'オペラハウス',kind:'opera',start:21000,end:39000,x:5,y:5}];
+function district(cx,cy,u,minutes,seed=0,size=11,clock=0){
+ const ops=[],places=new Map(),primary=seed===0&&size===11;
+ // 区画を固定して、後から出現するランドマークと住宅の衝突を防止。
+ if(primary)for(const l of landmarks)places.set(l.x+','+l.y,l);
+ const roadUnlock=minutes>=35;
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+  const isRoad=x===3||y===3||(size===11&&(x===7||y===7));
+  ops.push({x,y,type:'tile',p:isRoad&&roadUnlock?road:grass});
+  if(isRoad){if(roadUnlock&&(x+y)%3===0)ops.push({x,y,type:'stripe'});continue}
+  const lm=places.get(x+','+y);
+  if(lm){if(minutes>=lm.start+1)ops.push({x,y,type:'landmark',lm});continue}
+  const h=hash(x,y,seed);
+  // 0分は更地。最初の家は15分、以降は数十分ごとに区画が開く。
+  const homeIndex=Math.floor(hash(x,y,seed+1)*72);
+  const unlock=(primary&&x===5&&y===4)?15:45+homeIndex*38+(seed?seed*3:0);
+  if(h<.21){if(minutes>=unlock)ops.push({x,y,type:'tree',height:1+Math.floor(hash(x,y,seed+5)*2)});continue}
+  if(minutes<unlock)continue;
+  const progress=Math.min(1,(minutes-unlock)/110);
+  let height=1+Math.floor(hash(x,y,seed+2)*2);
+  // 高層ビルは100時間以降に解禁。ズームは進捗に影響しない。
+  if(minutes>=6000&&hash(x,y,seed+3)>.72)height+=Math.min(10,Math.floor((minutes-6000)/900)+1);
+  const built=Math.max(1,Math.ceil(height*progress));
+  const palettes=[['#e8bd8b','#b98565','#95684d'],['#a8cadd','#7599b7','#557b9b'],['#e8b4b6','#b57888','#925b70'],['#b9d3bc','#7ca98b','#5c8d75']];
+  ops.push({x,y,type:'building',h:built,p:palettes[Math.floor(hash(x,y,seed+4)*palettes.length)]});
+ }
+ // 奥から手前へ。座標と区画は常に固定。
+ ops.sort((a,b)=>(a.x+a.y)-(b.x+b.y)||a.x-b.x);
+ for(const o of ops){
+  if(o.type==='tile')cube(cx,cy,u,o.x,o.y,-1,...o.p);
+  else if(o.type==='stripe'){const [px,py]=iso(cx,cy,u,o.x,o.y,0);ctx.fillStyle='#e1d9a8';ctx.fillRect(px-1,py+u*.55,Math.max(2,u*.25),Math.max(1,u*.12))}
+  else if(o.type==='tree')tree(cx,cy,u,o.x,o.y,o.height);
+  else if(o.type==='building'){if(o.h<=3)house(cx,cy,u,o.x,o.y,o.h,o.p,seed);else tower(cx,cy,u,o.x,o.y,o.h,o.p);}
+  else if(o.type==='landmark'){const l=o.lm;landmark(cx,cy,u,o.x,o.y,l.kind,Math.min(1,Math.max(0,(minutes-l.start)/(l.end-l.start))))}
+ }
+ if(minutes>=90&&roadUnlock){for(const path of [{x:3,y:1+((clock/2400)%8)},{x:7,y:9-((clock/2900)%8)}]){if(path.x>=size)continue;car(cx,cy,u,path.x,path.y,'#f3bd68')}}
+}
+function globe(n){const cx=240,cy=177,r=117;ctx.fillStyle='#0d2947';ctx.fillRect(0,0,W,H);for(let i=0;i<75;i++){ctx.fillStyle=i%4?'#b3c9df':'#f9e7a8';ctx.fillRect(hash(i,3)*W,hash(i,9)*H,1+(i%3===0),1)}const grad=ctx.createRadialGradient(cx-35,cy-44,5,cx,cy,r);grad.addColorStop(0,'#6bc6e4');grad.addColorStop(.8,'#277ca5');grad.addColorStop(1,'#164c7e');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();ctx.save();ctx.beginPath();ctx.arc(cx,cy,r-2,0,Math.PI*2);ctx.clip();for(let i=0;i<450;i++){let x=(hash(i,2)-.5)*240,y=(hash(i,5)-.5)*230;if(x*x+y*y>r*r*.9)continue;const continent=Math.sin(x*.035)+Math.cos(y*.052)+Math.sin((x+y)*.06);if(continent<.55)continue;ctx.fillStyle=hash(i,6)>.4?'#6cae73':'#c1b778';ctx.fillRect(cx+x,cy+y,3+Math.floor(hash(i,7)*4),3);if(hash(i,11)<Math.min(.65,n/200000)){ctx.fillStyle='#ffe2a0';ctx.fillRect(cx+x+1,cy+y,2,2)}}ctx.restore();ctx.strokeStyle='#8fe5f5';ctx.lineWidth=3;ctx.beginPath();ctx.arc(cx,cy,r+2,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#d8efff';ctx.font='bold 12px monospace';ctx.fillText('PLANET EARTH / VOXEL CIVILIZATION',91,326)}
+function draw(n){const mode=Math.max(0,Math.min(4,level(n)+viewOffset)),minutes=state.seconds/60;draw.mode=mode;$('viewname').textContent=phases[mode].name;ctx.clearRect(0,0,W,H);ctx.fillStyle='#9dc4d4';ctx.fillRect(0,0,W,H);
+if(mode===0||mode===1){ctx.save();ctx.translate(240,198);ctx.scale(1.30,1.30);ctx.translate(-240,-198);district(240,79,mode===0?12:10,minutes,0,11,Date.now());ctx.restore()}
+else if(mode===2){ctx.fillStyle='#78a9bc';ctx.fillRect(0,0,W,H);const centers=[[124,63],[354,63],[124,222],[354,222]];const count=Math.min(4,Math.max(1,1+Math.floor(minutes/(GOAL_MINUTES*.12))));centers.forEach(([x,y],i)=>{if(i>=count)return;district(x,y,4.6,Math.max(0,minutes-i*GOAL_MINUTES*.12),i*41,7,Date.now());ctx.fillStyle='#fff1cc';ctx.font='bold 10px monospace';ctx.fillText('CITY '+(i+1),x-27,y+101)})}
+else if(mode===3){ctx.fillStyle='#78afc8';ctx.fillRect(0,0,W,H);const centers=[[115,72],[355,72],[115,224],[355,224]];centers.forEach(([x,y],i)=>{district(x,y,4.3,Math.max(0,minutes-i*GOAL_MINUTES*.13),i*31,7,Date.now());ctx.fillStyle='#f2f3d7';ctx.font='bold 10px monospace';ctx.fillText('REGION '+(i+1),x-30,y+95)})}
+else globe(minutes);
+const next=landmarks.find(l=>minutes<l.end);
+$('landmarkStatus').textContent=mode<2?(next?(minutes<next.start?'次の名所：'+next.name+'（あと'+Math.ceil((next.start-minutes)/60)+'時間）':'建築中：'+next.name+'  '+Math.floor(Math.max(0,(minutes-next.start)/(next.end-next.start))*100)+'%'):'世界の名所を建築中'):'世界を広げています';}
 
- const fin=$('section',{className:'q96',id:'q96Finance'});
- fin.innerHTML=`<h2>💰 年間収入・売上の見える化</h2><p class="q96-note">会社2社と個人事業3部門の実績を毎月入力できます。金額は税込・税引前など、ご自身で基準を統一してください。端末内保存で、公開GitHubには送信しません。</p>
- <div class="q96-grid"><div><label>集計年</label><input type="number" id="q96Year" min="2000" max="2200"></div><div><label>年間目標（円）</label><input type="number" id="q96Target" min="0" step="1" placeholder="例：6000000"></div></div>
- <div class="q96-card" id="q96Annual"></div><label>入力する月</label><select id="q96Month"></select>
- <form id="q96FinanceForm"><div class="q96-grid"><div><label>会社A</label><input id="q96CompanyA" type="number" min="0" step="1"></div><div><label>会社B</label><input id="q96CompanyB" type="number" min="0" step="1"></div></div>
- <h3>個人事業の内訳</h3><div class="q96-grid"><div><label>委託事業</label><input id="q96Contract" type="number" min="0" step="1"></div><div><label>コーヒー事業</label><input id="q96Coffee" type="number" min="0" step="1"></div><div><label>地域事業</label><input id="q96Regional" type="number" min="0" step="1"></div></div>
- <div class="q96-actions"><button type="submit">この月の実績を保存</button><button type="button" class="alt" id="q96ClearMonth">この月の入力を消去</button></div></form>
- <h3>月別実績</h3><div id="q96FinanceTable"></div><p class="q96-note">※会社からの給与と事業売上は会計上の意味が異なります。ここでは生活設計のための「収入・売上の合算目安」として表示し、税金・経費・手取りは計算しません。</p>`;
- goals.parentElement.insertBefore(fin,goals.nextSibling);fin.dataset.questTab='career';
- const now=new Date();field('q96Year').value=now.getFullYear();for(let m=1;m<=12;m++)field('q96Month').add(new Option(m+'月',String(m).padStart(2,'0')));field('q96Month').value=String(now.getMonth()+1).padStart(2,'0');
- const keys=['companyA','companyB','contract','coffee','regional'];const ids=['q96CompanyA','q96CompanyB','q96Contract','q96Coffee','q96Regional'];
- const currentKey=()=>field('q96Year').value+'-'+field('q96Month').value;
- const amount=o=>keys.reduce((s,k)=>s+(Number(o?.[k])||0),0);
- function loadMonth(){const o=state.finance.months[currentKey()]||{};keys.forEach((k,i)=>field(ids[i]).value=o[k]??'');paintFinance()}
- function paintFinance(){const year=Number(field('q96Year').value),rows=Array.from({length:12},(_,i)=>({month:String(i+1).padStart(2,'0'),data:state.finance.months[year+'-'+String(i+1).padStart(2,'0')]}));
-  const totalY=rows.reduce((s,r)=>s+amount(r.data),0),target=Number(state.finance.targets?.[year]||0),pct=target?Math.min(100,totalY/target*100):0;
-  field('q96Target').value=target||'';
-  const a=field('q96Annual');a.replaceChildren();a.append($('strong',{className:'q96-nums'},fmt(totalY)+' 円 / '+(target?fmt(target)+' 円':'目標未設定')));
-  const meter=$('div',{className:'q96-meter'});const fill=$('span');fill.style.width=pct+'%';meter.append(fill);a.append(meter,$('small',{},target?'目標達成率 '+(totalY/target*100).toFixed(1)+'%':'年間目標を入力すると達成率を表示します'));
-  const table=field('q96FinanceTable');table.replaceChildren();for(const r of rows){const line=$('div',{className:'q96-row q96-card'});line.append($('span',{},Number(r.month)+'月'),$('b',{className:'q96-nums'},r.data?fmt(amount(r.data))+' 円':'未入力'));table.append(line)}
- }
- field('q96Year').onchange=loadMonth;field('q96Month').onchange=loadMonth;
- field('q96Target').onchange=()=>{const year=Number(field('q96Year').value),v=Number(field('q96Target').value);if(!Number.isFinite(v)||v<0){alert('目標は0円以上で入力してください');return}state.finance.targets=state.finance.targets||{};state.finance.targets[year]=Math.round(v);save();paintFinance()};
- field('q96FinanceForm').onsubmit=e=>{e.preventDefault();const o={};for(let i=0;i<keys.length;i++){const raw=field(ids[i]).value;if(raw===''||!Number.isSafeInteger(Number(raw))||Number(raw)<0){alert('5項目すべてに0円以上の整数を入力してください。収入がない部門は0を入力します。');return}o[keys[i]]=Number(raw)}state.finance.months[currentKey()]=o;save();paintFinance();alert('月次実績を保存しました')};
- field('q96ClearMonth').onclick=()=>{if(!confirm(currentKey()+'の入力済み金額を消去しますか？'))return;delete state.finance.months[currentKey()];save();loadMonth()};
- document.querySelectorAll('.rpg-bottom a').forEach(a=>a.addEventListener('click',()=>{for(const x of [goals,fin])x.classList.toggle('tab-visible',a.dataset.tab==='career')}));
- const active=document.querySelector('.rpg-bottom a.active')?.dataset.tab==='career';goals.classList.toggle('tab-visible',active);fin.classList.toggle('tab-visible',active);
- // Hide extra sections on other tabs just like the original tab router.
- const css=document.createElement('style');css.textContent='main>.q96[data-quest-tab]{display:none!important}main>.q96[data-quest-tab].tab-visible{display:block!important}';document.head.append(css);
- save();paintGoals();loadMonth();
-})();
-</script><script>/* v9.9 Subgoals on v9.7 Growth Adventure: home boss missions and self-comparison */
-(()=>{
-const $=id=>document.getElementById(id), today=()=>new Date().toLocaleDateString('sv-SE');
-const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const now=new Date(),period=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
-const hero=$('home');if(!hero)return;
-const panel=document.createElement('section');panel.className='card q97-panel';panel.id='q97Boss';panel.dataset.questTab='home';hero.after(panel);
-const growth=document.createElement('section');growth.className='card q97-panel';growth.id='q97Growth';growth.dataset.questTab='home';panel.after(growth);
-const css=document.createElement('style');css.textContent=`.q97-panel{border:1px solid #725d9c;background:linear-gradient(145deg,#242440,#1b2b42);}.q97-panel h2{color:#ffe3ac}.q97-muted{font-size:12px;color:#bac8df;line-height:1.6}.q97-meter{height:14px;border-radius:12px;background:#3d4560;overflow:hidden;margin:10px 0}.q97-meter>span{display:block;height:100%;background:linear-gradient(90deg,#8e71d5,#e1b76d)}.q97-mission{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #3b4c64}.q97-mission input{width:19px;height:19px;accent-color:#b29af0;flex-shrink:0}.q97-mission label{flex:1;margin:0;word-break:break-word}.q97-mission button,.q97-mini{padding:6px 9px;font-size:12px}.q97-other{border-top:1px solid #43516a;padding:10px 0}.q97-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.q97-stat{background:#293956;border-radius:10px;padding:10px 5px;text-align:center}.q97-stat strong{display:block;font-size:22px;color:#ffdf9c}.q97-bars{display:flex;align-items:end;gap:6px;height:115px;border-bottom:1px solid #53627c;padding:0 2px}.q97-barcol{flex:1;text-align:center;font-size:10px;color:#bac8df;min-width:0}.q97-bar{background:#977bdc;border-radius:5px 5px 0 0;min-height:2px}.q97-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.q97-panel button{background:#67518f;color:#fff}.q97-panel button.secondary{background:#394d6b}.q97-panel button.danger{background:#6b3d53}.q97-edit{margin:9px 0;padding:11px;background:#17263e;border-radius:12px}.q97-edit input{margin:5px 0 9px}`;document.head.append(css);
-if(!Array.isArray(state.goalChanges))state.goalChanges=[];
-const goals=()=>Array.isArray(state.goals)?state.goals:[];
-function persist(){save()}
-function record(g,action,before,after,reason=''){state.goalChanges.push({time:new Date().toISOString(),goalId:g.id,goalName:g.name,action,before,after,reason});persist()}
-const find=id=>goals().find(g=>String(g.id)===String(id));
-function subgoals(g){if(!Array.isArray(g.subgoals))g.subgoals=[];return g.subgoals}
-function missions(g){if(!Array.isArray(g.missions))g.missions=[];return g.missions}
-function allMissions(g){return [...missions(g),...subgoals(g).flatMap(s=>Array.isArray(s.missions)?s.missions:[])]}
-function sgProgress(s){const a=s.missions||[];return a.length?a.filter(m=>m.done).length/a.length*100:0}
-function syncSubgoal(g,s){const a=s.missions||[];const complete=a.length>0&&a.every(m=>m.done);if(complete&&!s.done){s.done=true;s.completedAt=new Date().toISOString();if(!s.rewarded){s.rewarded=true;addLog('小目標達成：'+s.name,'practice',50,undefined,'manager');record(g,'小目標自動達成','',s.name)}}else if(!complete&&s.done){s.done=false;s.completedAt=null;record(g,'小目標進捗変更',s.name,'未達成')} }
-function addMission(g,name,sg){const m={id:Date.now()+Math.random(),name,done:false,createdAt:new Date().toISOString()};if(sg){sg.missions=sg.missions||[];sg.missions.push(m);syncSubgoal(g,sg)}else missions(g).push(m);record(g,'ミッション追加','',name);paint()}
-function removeMission(g,m){const sg=subgoals(g).find(s=>(s.missions||[]).some(x=>String(x.id)===String(m.id)));if(sg){sg.missions=sg.missions.filter(x=>x!==m);syncSubgoal(g,sg)}else g.missions=missions(g).filter(x=>x!==m);record(g,'ミッション削除',m.name,'');paint()}
-function setMission(g,m,checked){if(g.status==='done')return;m.done=checked;if(checked){m.completedAt=new Date().toISOString();if(!m.rewarded){m.rewarded=true;addLog('ミッション達成：'+m.name,'practice',20,undefined,'manager')}}else m.completedAt=null;const sg=subgoals(g).find(s=>(s.missions||[]).some(x=>x===m));if(sg)syncSubgoal(g,sg);persist();render();paint()}
-function meter(p){return `<div class="q97-meter"><span style="width:${Math.max(0,Math.min(100,p))}%"></span></div>`}
-function fraction(g){const sg=subgoals(g),legacy=missions(g);if(sg.length)return (sg.filter(x=>x.done).length+legacy.filter(x=>x.done).length)/(sg.length+legacy.length)*100;return legacy.length?legacy.filter(x=>x.done).length/legacy.length*100:0}
-function missionRows(g,arr){return arr.map(x=>`<div class="q97-mission"><input aria-label="${safe(x.name)}" type="checkbox" data-g="${g.id}" data-m="${x.id}" ${x.done?'checked':''}><label>${safe(x.name)}</label><button class="secondary" data-edit="${x.id}" data-g="${g.id}">編集</button><button class="danger" data-del="${x.id}" data-g="${g.id}">×</button></div>`).join('')}
-function bossCard(g,primary){const sg=subgoals(g),legacy=missions(g),pct=fraction(g);const detail=sg.map(s=>`<div class="q99-sub"><div class="top"><b>${s.done?'🏅':'🎯'} ${safe(s.name)}</b><span class="q97-muted">${Math.round(sgProgress(s))}%</span></div>${meter(sgProgress(s))}<div class="q97-muted">${(s.missions||[]).filter(m=>m.done).length}/${(s.missions||[]).length} ミッション · 自動達成で50 XP</div>${missionRows(g,s.missions||[])}<div class="q97-actions"><button class="secondary" data-addmission="${s.id}" data-g="${g.id}">＋ 実行ミッション</button><button class="secondary" data-editsg="${s.id}" data-g="${g.id}">小目標を編集</button><button class="danger" data-delsg="${s.id}" data-g="${g.id}">削除</button></div></div>`).join('');return `<div class="${primary?'':'q97-other'}"><div class="q97-muted">${primary?'🐉 最優先の中ボス':'⚔ その他の目標'} · ${safe(g.period)}</div><h3 style="margin:8px 0">${safe(g.name)}</h3>${meter(pct)}<div class="q97-muted">小目標 ${sg.filter(x=>x.done).length}/${sg.length} · 全体 ${Math.round(pct)}% · 討伐報酬 ${Number(g.xp)||300} XP</div>${primary?`<h4>🎯 小目標</h4>${detail}<div class="q97-actions"><button data-addsg="${g.id}">＋ 小目標を追加</button></div>${legacy.length?`<h4>📋 既存ミッション</h4>${missionRows(g,legacy)}`:''}<div class="q97-actions"><button data-add="${g.id}">＋ 単独ミッション</button><button class="secondary" data-goal="${g.id}">目標を編集</button></div><div id="q97Editor"></div>`:`<div class="q97-actions"><button class="secondary" data-priority="${g.id}">最優先にする</button></div>`}</div>`}
-function paint(){const periodNow=new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,'0');const open=goals().filter(g=>g.status!=='done'&&g.type==='month');const sorted=open.sort((a,b)=>{const ap=(a.period===periodNow?2:0)+(String(a.id)===String(state.primaryGoalId)?4:0),bp=(b.period===periodNow?2:0)+(String(b.id)===String(state.primaryGoalId)?4:0);return bp-ap});
- panel.innerHTML='<h2>🏰 今月の中ボス・小目標・ミッション</h2>'+(sorted.length?bossCard(sorted[0],true)+sorted.slice(1).map(g=>bossCard(g,false)).join(''):'<p class="q97-muted">月間ゴールがまだありません。「職業」タブで登録してください。</p><button id="q97Create">目標を登録する</button>')+'<p class="q97-muted">小目標は、実行ミッションが1つ以上あり、すべて完了すると自動達成します。未達成に戻しても獲得済みXPは消えません。</p><details><summary class="q97-muted">📜 変更履歴</summary>'+((state.goalChanges||[]).slice(-30).reverse().map(h=>'<p class="q97-muted">'+safe(new Date(h.time).toLocaleString('ja-JP'))+' · '+safe(h.action)+' · '+safe(h.before||'')+(h.after?' → '+safe(h.after):'')+'</p>').join('')||'<p class="q97-muted">履歴はまだありません。</p>')+'</details>';
- panel.querySelector('#q97Create')?.addEventListener('click',()=>document.querySelector('.rpg-bottom a[data-tab="career"]')?.click());
- panel.querySelectorAll('[data-priority]').forEach(b=>b.onclick=()=>{state.primaryGoalId=b.dataset.priority;persist();paint()});
- panel.querySelectorAll('[data-goal]').forEach(b=>b.onclick=()=>{document.querySelector('.rpg-bottom a[data-tab="career"]')?.click();const g=find(b.dataset.goal);const cards=[...document.querySelectorAll('#q96GoalOpen .q96-card')];cards.find(x=>x.querySelector('b')?.textContent.includes(g?.name))?.querySelector('button')?.click()});
- panel.querySelectorAll('input[data-m]').forEach(c=>c.onchange=()=>{const g=find(c.dataset.g),m=g&&allMissions(g).find(x=>String(x.id)===c.dataset.m);if(g&&m)setMission(g,m,c.checked)});
- function editor(label,initial,onSave){const e=$('q97Editor');if(!e)return;e.innerHTML='<div class="q97-edit"><label>'+safe(label)+'</label><input id="q97Name" maxlength="120"><label>変更理由（任意）</label><input id="q97Reason" maxlength="120"><div class="q97-actions"><button id="q97Save">保存</button><button class="secondary" id="q97Cancel">キャンセル</button></div></div>';$('q97Name').value=initial;$('q97Cancel').onclick=()=>e.replaceChildren();$('q97Save').onclick=()=>{const v=$('q97Name').value.trim();if(!v)return alert('内容を入力してください');onSave(v,$('q97Reason').value.trim())}}
- panel.querySelectorAll('[data-addsg]').forEach(b=>b.onclick=()=>{const g=find(b.dataset.addsg);editor('小目標の名前','',(v)=>{subgoals(g).push({id:Date.now()+Math.random(),name:v,missions:[],done:false,createdAt:new Date().toISOString()});record(g,'小目標追加','',v);paint()})});
- panel.querySelectorAll('[data-editsg]').forEach(b=>b.onclick=()=>{const g=find(b.dataset.g),sg=subgoals(g).find(x=>String(x.id)===b.dataset.editsg);editor('小目標の編集',sg.name,(v,r)=>{const old=sg.name;sg.name=v;record(g,'小目標編集',old,v,r);paint()})});
- panel.querySelectorAll('[data-delsg]').forEach(b=>b.onclick=()=>{const g=find(b.dataset.g),sg=subgoals(g).find(x=>String(x.id)===b.dataset.delsg);if(confirm('小目標とその実行ミッションを削除しますか？ 獲得済みXPは維持されます。')){g.subgoals=g.subgoals.filter(x=>x!==sg);record(g,'小目標削除',sg.name,'');paint()}});
- panel.querySelectorAll('[data-addmission],[data-add],[data-edit]').forEach(b=>b.onclick=()=>{const g=find(b.dataset.g||b.dataset.add),sg=b.dataset.addmission?subgoals(g).find(x=>String(x.id)===b.dataset.addmission):null,m=b.dataset.edit?allMissions(g).find(x=>String(x.id)===b.dataset.edit):null;editor('実行ミッション',m?.name||'',(v,r)=>{if(m){const old=m.name;m.name=v;record(g,'ミッション編集',old,v,r);paint()}else addMission(g,v,sg)})});
- panel.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{const g=find(b.dataset.g),m=allMissions(g).find(x=>String(x.id)===b.dataset.del);if(m&&confirm('ミッションを削除しますか？'))removeMission(g,m)});
- paintGrowth()}
-function dateKey(t){const d=new Date(t);return Number.isNaN(d.getTime())?'':d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
-function paintGrowth(){const log=Array.isArray(state.log)?state.log:[];const y=now.getFullYear(),date=today(),yesterday=new Date(now);yesterday.setDate(yesterday.getDate()-1);const prev=dateKey(yesterday);const quest=log.filter(l=>!String(l.name||'').startsWith('中ボス討伐：')&&!String(l.name||'').startsWith('ミッション達成：'));
- const count=d=>quest.filter(l=>dateKey(l.time)===d).length,annual=quest.filter(l=>dateKey(l.time).startsWith(y+'-')).length;
- const days=Array.from({length:7},(_,i)=>{const d=new Date(now);d.setDate(d.getDate()-(6-i));return {date:dateKey(d),label:(d.getMonth()+1)+'/'+d.getDate()}});const vals=days.map(d=>count(d.date)),max=Math.max(1,...vals);
- growth.innerHTML=`<h2>📈 昨日までの自分からの成長</h2><div class="q97-cols"><div class="q97-stat"><div class="q97-muted">今日</div><strong>${count(date)}</strong><small>件達成</small></div><div class="q97-stat"><div class="q97-muted">昨日</div><strong>${count(prev)}</strong><small>件達成</small></div><div class="q97-stat"><div class="q97-muted">今年の累計</div><strong>${annual}</strong><small>件達成</small></div></div><p class="q97-muted">過去7日間の達成数</p><div class="q97-bars">${days.map((d,i)=>`<div class="q97-barcol"><div>${vals[i]}</div><div class="q97-bar" style="height:${Math.max(2,vals[i]/max*78)}px"></div><div>${d.label}</div></div>`).join('')}</div><p class="q97-muted">昨日より少ない日も、積み上げた記録は消えません。詳しい週・月・年の記録は「記録」タブへ。</p><p class="q97-muted">🏅 討伐した中ボス：${goals().filter(g=>g.status==='done').length}体 · 達成済みミッション：${goals().flatMap(g=>allMissions(g)).filter(m=>m.done).length}件</p>`}
-// Block accidental boss completion before all listed missions are done.
-const open=$('q96GoalOpen');if(open)open.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!b.textContent.includes('討伐・達成'))return;const card=b.closest('.q96-card');const name=card?.querySelector('b')?.textContent.replace(/^🐉\s*/,'');const g=goals().find(x=>x.status!=='done'&&x.name===name);if(g&&(allMissions(g).length===0||!allMissions(g).every(m=>m.done)||subgoals(g).some(s=>!s.done))){e.stopImmediatePropagation();alert('中ボスを討伐するには、小目標とミッションをすべて達成してください。');}},true);
-// Capture changes to goals in the existing goal editor.
-const goalForm=$('q96GoalForm');if(goalForm)goalForm.addEventListener('submit',()=>{const id=$('q96GoalId')?.value,g=find(id);if(!g)return;const before=JSON.stringify({name:g.name,type:g.type,period:g.period,xp:g.xp,memo:g.memo});const after=JSON.stringify({name:$('q96GoalName').value,type:$('q96GoalType').value,period:$('q96GoalPeriod').value,xp:Number($('q96GoalXP').value),memo:$('q96GoalMemo').value});if(before!==after)record(g,'目標編集',before,after);},false);
-const oldRender=render;render=function(){oldRender();paintGrowth()};
-// Sections are appended after tab router initialization; honor the active tab.
-function sync(){const active=document.querySelector('.rpg-bottom a.active')?.dataset.tab==='home';panel.classList.toggle('tab-visible',active);growth.classList.toggle('tab-visible',active)}
-document.querySelectorAll('.rpg-bottom a').forEach(a=>a.addEventListener('click',()=>{paint();sync()}));
-const style=document.createElement('style');style.textContent='main>.q97-panel[data-quest-tab]{display:none!important}main>.q97-panel[data-quest-tab].tab-visible{display:block!important}';document.head.append(style);
-paint();sync();
-window.addEventListener('pageshow',()=>{paint();sync()});
-})();
-</script><script>/* v9.8: Move the existing finance dashboard and entry form to the home tab without changing stored data. */
-(function(){
- const finance=document.getElementById('q96Finance');
- const growth=document.getElementById('q97Growth');
- if(!finance||!growth)return;
- growth.insertAdjacentElement('afterend',finance);
- finance.dataset.questTab='home';
- function syncFinance(){
-   const active=document.querySelector('.rpg-bottom a.active');
-   finance.classList.toggle('tab-visible',active?.dataset.tab==='home');
- }
- document.querySelectorAll('.rpg-bottom a').forEach(a=>a.addEventListener('click',syncFinance));
- window.addEventListener('pageshow',syncFinance);
- syncFinance();
-})();
-</script><style>.q99-sub{background:#1a2944;border:1px solid #5c5485;border-radius:12px;padding:12px;margin:12px 0}.q99-sub .q97-meter{height:9px}.q99-sub h4{margin:8px 0}</style><script>/* v9.9.1: goal-room subgoal editor, independent of home/month filter */
-(()=>{
- const host=document.getElementById('q96Goals');if(!host)return;
- const section=document.createElement('section');section.className='q96';section.id='q991SubgoalRoom';section.dataset.questTab='career';
- section.innerHTML='<h2>🎯 小目標・実行ミッションの設定（9.9.2）</h2><p class="q96-note">年間・四半期・月間のどのゴールにも小目標を追加できます。まずゴールを選び、小目標を作成してください。</p><label for="q991Goal">編集するゴール</label><select id="q991Goal"></select><div id="q991Content"></div>';
- host.before(section);
- const sel=section.querySelector('#q991Goal'),content=section.querySelector('#q991Content');
- const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const gs=()=>Array.isArray(state.goals)?state.goals:[];
- const active=()=>gs().filter(g=>g.status!=='done');
- const goal=()=>active().find(g=>String(g.id)===sel.value);
- const subs=g=>(Array.isArray(g.subgoals)?g.subgoals:(g.subgoals=[]));
- const log=(g,action,before='',after='')=>{if(!Array.isArray(state.goalChanges))state.goalChanges=[];state.goalChanges.push({time:new Date().toISOString(),goalId:g.id,goalName:g.name,action,before,after});};
- const saveAll=()=>{save();window.dispatchEvent(new Event('mlq-goals-updated'))};
- function sync(g,s){const ms=s.missions||[];const ok=ms.length>0&&ms.every(m=>m.done);if(ok&&!s.done){s.done=true;s.completedAt=new Date().toISOString();if(!s.rewarded){s.rewarded=true;addLog('小目標達成：'+s.name,'practice',50,undefined,'manager')}log(g,'小目標自動達成','',s.name)}else if(!ok&&s.done){s.done=false;s.completedAt=null;log(g,'小目標進捗変更',s.name,'未達成')}}
- function draw(){const g=goal();if(!g){content.innerHTML='<p class="q96-note">まだ目標がありません。下の「中ボス・目標の間」で月間ゴールを登録すると、ここに「＋ 小目標を追加」が表示されます。</p>';return}
- const cards=subs(g).map((s,i)=>{const ms=Array.isArray(s.missions)?s.missions:[],done=ms.filter(m=>m.done).length,pct=ms.length?Math.round(done/ms.length*100):0;
- return `<div class="q96-card"><div style="display:flex;justify-content:space-between;gap:8px"><b>${s.done?'🏅':'🎯'} ${esc(s.name)}</b><span>${pct}%</span></div><div class="q97-meter"><span style="width:${pct}%"></span></div><p class="q96-note">${done}/${ms.length} ミッション・${s.done?'達成済み':'挑戦中'}</p>${ms.map((m,j)=>`<div class="q97-mission"><input type="checkbox" data-action="check" data-i="${i}" data-j="${j}" ${m.done?'checked':''}><label>${esc(m.name)}</label><button class="secondary" data-action="editmission" data-i="${i}" data-j="${j}">編集</button><button class="danger" data-action="delmission" data-i="${i}" data-j="${j}">×</button></div>`).join('')}<div class="q97-actions"><button data-action="addmission" data-i="${i}">＋ ミッション</button><button class="secondary" data-action="editsub" data-i="${i}">小目標を編集</button><button class="danger" data-action="delsub" data-i="${i}">削除</button></div></div>`}).join('');
- content.innerHTML='<p class="q96-note">'+esc(g.name)+' · '+esc(g.period)+'</p>'+cards+'<button type="button" id="q991AddSub">＋ 小目標を追加</button>';
- content.querySelector('#q991AddSub').onclick=()=>{const name=prompt('小目標の名前を入力してください');if(!name?.trim())return;subs(g).push({id:Date.now()+Math.random(),name:name.trim(),missions:[],done:false,createdAt:new Date().toISOString()});log(g,'小目標追加','',name.trim());saveAll();draw()};
- content.querySelectorAll('[data-action]').forEach(el=>el.addEventListener(el.dataset.action==='check'?'change':'click',()=>{
- const i=Number(el.dataset.i),j=Number(el.dataset.j),s=subs(g)[i],m=s?.missions?.[j],act=el.dataset.action;if(!s)return;
- if(act==='check'){m.done=el.checked;m.completedAt=m.done?new Date().toISOString():null;if(m.done&&!m.rewarded){m.rewarded=true;addLog('ミッション達成：'+m.name,'practice',20,undefined,'manager')}sync(g,s)}
- if(act==='addmission'){const name=prompt('実行ミッションの名前');if(!name?.trim())return;s.missions=s.missions||[];s.missions.push({id:Date.now()+Math.random(),name:name.trim(),done:false,createdAt:new Date().toISOString()});sync(g,s);log(g,'ミッション追加','',name.trim())}
- if(act==='editmission'){const name=prompt('ミッションを編集',m.name);if(!name?.trim())return;log(g,'ミッション編集',m.name,name.trim());m.name=name.trim()}
- if(act==='delmission'){if(!confirm('ミッションを削除しますか？'))return;log(g,'ミッション削除',m.name,'');s.missions.splice(j,1);sync(g,s)}
- if(act==='editsub'){const name=prompt('小目標を編集',s.name);if(!name?.trim())return;log(g,'小目標編集',s.name,name.trim());s.name=name.trim()}
- if(act==='delsub'){if(!confirm('小目標とミッションを削除しますか？'))return;log(g,'小目標削除',s.name,'');subs(g).splice(i,1)}
- saveAll();draw();
- }));
- }
- function refresh(){const before=sel.value;sel.replaceChildren();active().forEach(g=>{const o=document.createElement('option');o.value=String(g.id);o.textContent=({month:'月間',quarter:'四半期',year:'年間'}[g.type]||g.type)+'｜'+g.period+'｜'+g.name;sel.append(o)});if(active().some(g=>String(g.id)===before))sel.value=before;draw()}
- sel.addEventListener('change',draw);
- document.getElementById('q96GoalForm')?.addEventListener('submit',()=>setTimeout(refresh,100));document.getElementById('q96Goals')?.addEventListener('click',()=>setTimeout(refresh,150));
- document.getElementById('q96GoalOpen')?.addEventListener('click',()=>setTimeout(refresh,0));
- document.querySelectorAll('.rpg-bottom a').forEach(a=>a.addEventListener('click',()=>{section.classList.toggle('tab-visible',a.dataset.tab==='career');if(a.dataset.tab==='career')refresh()}));
- section.classList.toggle('tab-visible',document.querySelector('.rpg-bottom a.active')?.dataset.tab==='career');
- section.style.display='';
- const style=document.createElement('style');style.textContent='#q991SubgoalRoom{display:none}#q991SubgoalRoom.tab-visible{display:block!important}#q991SubgoalRoom .q97-mission{display:flex;gap:7px;align-items:center;margin:8px 0}#q991SubgoalRoom .q97-mission label{flex:1}#q991SubgoalRoom .q97-mission input{width:20px;height:20px}#q991SubgoalRoom .q97-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}#q991SubgoalRoom .q97-actions button{font-size:12px;padding:7px}';document.head.append(style);
- window.addEventListener('mlq-goals-updated',()=>{ /* home re-renders when the home tab is selected */ });
- refresh();
-})();</script></body></html>
+// 車のアニメーションは描画だけ更新。集中時間はタイマー処理でのみ加算。
+let lastFrame=0;function animateWorld(ts){if(ts-lastFrame>650&&!document.hidden){lastFrame=ts;draw(Math.floor(state.seconds/60))}requestAnimationFrame(animateWorld)}requestAnimationFrame(animateWorld);
+$('zoomout').onclick=()=>{viewOffset=Math.max(-4,viewOffset-1);drawn=-1;update()};$('zoomin').onclick=()=>{viewOffset=Math.min(4,viewOffset+1);drawn=-1;update()};
+function finish(){active=false;paused=false;clearInterval(interval);remaining=0;beep();$('toast').textContent='集中完了！街が成長しました。';$('minutes').disabled=false;remaining=Number($('minutes').value)*60;update()}function tick(){if(!active)return;const now=Date.now(),r=Math.max(0,(deadline-now)/1000),elapsed=Math.max(0,Math.min((now-lastSave)/1000,remaining));credit(elapsed);lastSave=now;remaining=r;if(r<=0){finish();return}update()}function start(){if(active)return;let m=Math.max(1,Math.min(180,Math.floor(Number($('minutes').value)||180)));$('minutes').value=m;if(!paused){session=m*60;remaining=session}ensureAudio();deadline=Date.now()+remaining*1000;lastSave=Date.now();active=true;paused=false;$('toast').textContent='集中するほど街が育ちます';clearInterval(interval);interval=setInterval(tick,250);update()}$('start').onclick=start;$('pause').onclick=()=>{tick();if(!active)return;remaining=current();active=false;paused=true;clearInterval(interval);$('toast').textContent='一時停止中';update()};$('reset').onclick=()=>{if(active)tick();active=false;paused=false;clearInterval(interval);remaining=Math.max(1,Math.min(180,Number($('minutes').value)||180))*60;session=remaining;$('toast').textContent='終了しました。これまでの成長は保存されています。';update()};$('minutes').oninput=()=>{if(active||paused)return;let m=Math.max(1,Math.min(180,Number($('minutes').value)||180));remaining=m*60;session=remaining;update()};document.querySelectorAll('[data-min]').forEach(b=>b.onclick=()=>{$('minutes').value=b.dataset.min;$('minutes').oninput()});$('export').onclick=()=>{try{save();const payload={app:'FOCUS EARTH',version:1,exportedAt:new Date().toISOString(),state:{seconds:state.seconds,today:state.today,day:state.day,sound:state.sound}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='focus-earth-backup-'+DAY()+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);$('backupStatus').textContent='バックアップファイルを保存しました。安全な場所に保管してください。'}catch(e){$('backupStatus').textContent='書き出しに失敗しました。'}};
+$('import').onclick=()=>$('backupFile').click();$('backupFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());const v=obj?.app==='FOCUS EARTH'?obj.state:obj;if(!v||typeof v.seconds!=='number'||!Number.isFinite(v.seconds)||v.seconds<0||v.seconds>1e12)throw Error('invalid');if(!confirm('現在の集中記録をバックアップの内容で上書きします。よろしいですか？'))return;active=false;paused=false;clearInterval(interval);state.seconds=v.seconds;state.day=typeof v.day==='string'?v.day:DAY();state.today=typeof v.today==='number'&&Number.isFinite(v.today)&&v.today>=0?v.today:0;state.sound=typeof v.sound==='boolean'?v.sound:true;if(state.day!==DAY()){state.day=DAY();state.today=0}remaining=Number($('minutes').value)*60;session=remaining;$('sound').checked=state.sound;save();drawn=-1;update();$('backupStatus').textContent='記録を復元しました。'}catch(err){$('backupStatus').textContent='ファイルを読み込めませんでした。FOCUS EARTHのバックアップを選んでください。'}finally{e.target.value=''}};
+$('sound').checked=state.sound;$('sound').onchange=()=>{state.sound=$('sound').checked;save();if(state.sound)ensureAudio()};document.addEventListener('visibilitychange',()=>{if(!document.hidden&&active){lastSave=Math.min(lastSave,Date.now());tick()}});window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;$('install').style.display='block'});$('install').onclick=async()=>{if(deferred){deferred.prompt();await deferred.userChoice;deferred=null;$('install').style.display='none'}};update();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});})();
+</script></body></html>
